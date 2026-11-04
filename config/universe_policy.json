@@ -1,0 +1,38 @@
+{
+  "version": "4",
+  "tier_1_min": 75,
+  "tier_2_min": 40,
+  "points": {
+    "corporate_rank_top_100": 40,
+    "corporate_rank_other": 30,
+    "relevant_ranking_top_10": 45,
+    "relevant_ranking_other": 30,
+    "regulatory_presence": 20,
+    "bank_assets_100b_usd": 25,
+    "bank_assets_10b_usd": 10,
+    "target_relevance": 10,
+    "historical_relevant_internship": 25,
+    "repeat_recruiting_3_requisitions": 10,
+    "dedicated_undergraduate_program": 20,
+    "independent_external_families_2": 10,
+    "regulated_1b_assets_10_years": 10,
+    "adviser_aum_100b_usd": 25,
+    "adviser_aum_1b_usd": 15
+  },
+  "bank_import_min_assets_usd": 10000000000,
+  "adviser_import_min_aum_usd": 1000000000,
+  "adviser_requires_recruiting_evidence": true,
+  "stale_hours": {
+    "1": 24,
+    "2": 48,
+    "3": 168
+  },
+  "notes": "Weights are inspectable policy choices, not empirical claims about recruiting prestige. Unknowns earn no points. Overrides require recorded reasons. Multiple rows from one publisher/regulator do not multiply points. Established regulated institutions receive ten points only when source records show >=$1B balance-sheet assets and >=10 years operating history. No named-company factor exists.",
+  "as_of_date": "2026-11-02",
+  "tier_1_eligibility": {
+    "corporate_rank_max": 500,
+    "relevant_rank_max": 10,
+    "bank_assets_min_usd": 100000000000,
+    "aum_min_usd": 100000000000
+  }
+}

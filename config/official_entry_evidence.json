@@ -1,0 +1,99 @@
+[
+  {
+    "company_id": 988,
+    "employer": "Evercore",
+    "url": "https://www.evercore.com/careers/students-graduates/",
+    "source_url": "https://www.evercore.com/careers/students-graduates/",
+    "verified_at": "2026-11-04T05:07:16+00:00",
+    "method": "Primary employer careers page found through targeted research after publisher profile exposed no company website; not a verified job listing"
+  },
+  {
+    "company_id": 990,
+    "employer": "PJT Partners",
+    "url": "https://www.pjtpartners.com/careers/students",
+    "source_url": "https://www.pjtpartners.com/careers/students",
+    "verified_at": "2026-11-04T05:07:16+00:00",
+    "method": "Primary employer careers page found through targeted research after publisher profile exposed no company website; not a verified job listing"
+  },
+  {
+    "company_id": 989,
+    "employer": "Moelis & Company",
+    "url": "https://www.moelis.com/careers/",
+    "source_url": "https://www.moelis.com/careers/",
+    "verified_at": "2026-11-04T05:07:16+00:00",
+    "method": "Primary employer careers page found through targeted research after publisher profile exposed no company website; not a verified job listing"
+  },
+  {
+    "company_id": 987,
+    "employer": "Centerview Partners",
+    "url": "https://www.centerviewpartners.com/careers/",
+    "source_url": "https://www.centerviewpartners.com/careers/",
+    "verified_at": "2026-11-04T05:07:16+00:00",
+    "method": "Primary employer careers page found through targeted research after publisher profile exposed no company website; not a verified job listing"
+  },
+  {
+    "company_id": 949,
+    "employer": "Cornerstone Research",
+    "url": "https://www.cornerstone.com/Careers/",
+    "source_url": "https://www.cornerstone.com/Careers/",
+    "verified_at": "2026-11-04T05:07:16+00:00",
+    "method": "Primary employer careers page found through targeted research after publisher profile exposed no company website; not a verified job listing"
+  },
+  {
+    "company_id": 951,
+    "employer": "Bates White Economic Consulting",
+    "url": "https://www.bateswhite.com/careers/current-openings",
+    "source_url": "https://www.bateswhite.com/careers/current-openings",
+    "verified_at": "2026-11-04T05:07:16+00:00",
+    "method": "Primary employer careers page found through targeted research after publisher profile exposed no company website; not a verified job listing"
+  },
+  {
+    "company_id": 950,
+    "employer": "ghSMART",
+    "url": "https://careers.ghsmart.com/",
+    "source_url": "https://careers.ghsmart.com/",
+    "verified_at": "2026-11-04T05:07:16+00:00",
+    "method": "Primary employer careers page found through targeted research after publisher profile exposed no company website; not a verified job listing"
+  },
+  {
+    "company_id": 992,
+    "employer": "William Blair",
+    "url": "https://www.williamblair.com/careers",
+    "source_url": "https://www.williamblair.com/careers",
+    "verified_at": "2026-11-04T05:07:16+00:00",
+    "method": "Primary employer careers page found through targeted research after publisher profile exposed no company website; not a verified job listing"
+  },
+  {
+    "company_id": 653,
+    "employer": "Arthur D. Little",
+    "url": "https://www.adlittle.com/en/arthur_d_little_careers",
+    "source_url": "https://www.adlittle.com/en/arthur_d_little_careers",
+    "verified_at": "2026-11-04T17:00:32+00:00",
+    "method": "Primary official careers page independently found; native handoff must be fetched and verified by recovery"
+  },
+  {
+    "company_id": 727,
+    "employer": "Bracebridge Capital, LLC",
+    "url": "https://www.bracebridgecapital.com/careers/",
+    "source_url": "https://www.bracebridgecapital.com/careers/",
+    "verified_at": "2026-11-04T18:25:52+00:00",
+    "method": "Primary official careers page independently inspected; recovery must verify live recruiting handoffs and all known corporate/student surfaces."
+  },
+  {
+    "company_id": 876,
+    "employer": "Santander Bank, N.A.",
+    "url": "https://www.santanderus.com/careers/",
+    "source_url": "https://www.santanderus.com/careers/",
+    "verified_at": "2026-11-04T18:25:52+00:00",
+    "method": "Primary official careers page independently inspected; recovery must verify live recruiting handoffs and all known corporate/student surfaces."
+  },
+  {
+    "company_id": 876,
+    "employer": "Santander Bank, N.A.",
+    "url": "https://www.santandercareers.com/en",
+    "source_url": "https://www.santandercareers.com/en",
+    "verified_at": "2026-11-04T18:36:49+00:00",
+    "method": "Official Santander US Careers hyperlink verified in public primary page; recruiting root inspected locally with preserved SHA256. Separate old Workday board remains unresolved, never assumed equivalent.",
+    "official_handoff_from": "https://www.santanderus.com/careers/"
+  }
+]

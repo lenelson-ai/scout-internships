@@ -1,0 +1,8 @@
+BEGIN IMMEDIATE;
+ALTER TABLE sources ADD COLUMN source_role TEXT NOT NULL DEFAULT 'UNKNOWN' CHECK(source_role IN ('AUTHORITATIVE','SUPPLEMENTAL','LEGACY','DUPLICATE','DISABLED','UNKNOWN'));
+ALTER TABLE sources ADD COLUMN role_evidence TEXT;
+ALTER TABLE sources ADD COLUMN canonical_source_id INTEGER REFERENCES sources(id);
+CREATE TABLE source_role_history(id INTEGER PRIMARY KEY,source_id INTEGER NOT NULL REFERENCES sources(id),role TEXT NOT NULL,evidence TEXT NOT NULL,changed_at TEXT NOT NULL);
+CREATE TABLE source_resolution_runs(id INTEGER PRIMARY KEY,company_id INTEGER NOT NULL REFERENCES companies(id),attempted_at TEXT NOT NULL,status TEXT NOT NULL,confidence TEXT NOT NULL,evidence TEXT NOT NULL);
+INSERT INTO schema_version VALUES(6);
+COMMIT;

@@ -1,0 +1,6 @@
+BEGIN IMMEDIATE;
+ALTER TABLE jobs ADD COLUMN department TEXT NOT NULL DEFAULT '';
+ALTER TABLE jobs ADD COLUMN countries TEXT NOT NULL DEFAULT '[]';
+ALTER TABLE source_jobs ADD COLUMN normalized_payload TEXT;
+INSERT INTO schema_version VALUES(2);
+COMMIT;

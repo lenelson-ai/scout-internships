@@ -1,0 +1,9 @@
+[
+  {"total": 3, "jobPostings": [
+    {"title": "Corporate Finance Intern", "externalPath": "/job/Boston/Corporate-Finance-Intern_R100", "locationsText": "2 Locations", "postedOn": "Posted 3 Days Ago", "bulletFields": ["R100"]},
+    {"title": "Commercial Banking Summer Analyst", "externalPath": "/job/NY/Commercial-Banking-Summer-Analyst_R200", "locationsText": "New York, NY", "postedOn": "Posted Today", "bulletFields": ["R200"]}
+  ]},
+  {"total": 3, "jobPostings": [
+    {"title": "Senior Finance Manager", "externalPath": "/job/NY/Senior-Finance-Manager_R300", "locationsText": "New York, NY", "bulletFields": ["R300"]}
+  ]}
+]

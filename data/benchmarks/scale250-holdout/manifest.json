@@ -1,0 +1,472 @@
+{
+  "frozen_at": "2026-11-04T04:23:12+00:00",
+  "seed": "scout-scale250-sector-provider-v1",
+  "method": "Six employer sampling units per primary sector roster, round-robin known provider strata then stable SHA256 raw-record order; no inventory, open-status, health or capture filter. Exclude all prior benchmark employer names and canonical aliases. A provisional draft was corrected before any live job verification because name-only exclusion admitted canonical aliases; no outcomes were inspected before the correction. Require a recorded website, careers URL or explicit publisher profile so official verification is possible. Retain unavailable/no-eligible-job units. Select lowest hash publication ID among verified US undergraduate target internships per employer; no replacement after outcomes.",
+  "frames": {
+    "BANKING": {
+      "UNKNOWN": 35,
+      "custom_unidentified": 4,
+      "workday": 2
+    },
+    "CONSULTING": {
+      "UNKNOWN": 38,
+      "icims": 1,
+      "custom_unidentified": 2,
+      "greenhouse": 2
+    },
+    "ASSET_MANAGEMENT": {
+      "UNKNOWN": 132,
+      "greenhouse": 5,
+      "custom_unidentified": 2,
+      "workday": 1
+    },
+    "CORPORATE_BUSINESS": {
+      "custom_unidentified": 140,
+      "workday": 24,
+      "UNKNOWN": 5,
+      "oracle": 4,
+      "smartrecruiters": 3,
+      "greenhouse": 1,
+      "eightfold": 1
+    }
+  },
+  "observations": [
+    {
+      "employer": "Leerink Partners, LLC",
+      "sector": "BANKING",
+      "dataset": "vault_banking_prestige",
+      "raw_id": 2207,
+      "source_external_id": "/company-profiles/commercial-banking-and-investment-banking/leerink-partners-llc",
+      "company_id": 1169,
+      "baseline_tier": 2,
+      "official_entry": null,
+      "domains": [],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/commercial-banking-and-investment-banking/leerink-partners-llc",
+      "known_providers": [],
+      "provider_stratum": "UNKNOWN"
+    },
+    {
+      "employer": "Citizens",
+      "sector": "BANKING",
+      "dataset": "vault_banking_prestige",
+      "raw_id": 2220,
+      "source_external_id": "/company-profiles/commercial-banking-and-investment-banking/citizens-financial-group-inc",
+      "company_id": 714,
+      "baseline_tier": 1,
+      "official_entry": "https://jobs.citizensbank.com/job/boston/2027-commercial-summer-intern-global-markets-boston-ma/288/100363712256",
+      "domains": [
+        "jobs.citizensbank.com",
+        "citizensbank.com"
+      ],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/commercial-banking-and-investment-banking/citizens-financial-group-inc",
+      "known_providers": [
+        "custom_unidentified"
+      ],
+      "provider_stratum": "custom_unidentified"
+    },
+    {
+      "employer": "Truist",
+      "sector": "BANKING",
+      "dataset": "vault_banking_prestige",
+      "raw_id": 2215,
+      "source_external_id": "/company-profiles/commercial-banking-and-investment-banking/truist-bank",
+      "company_id": 619,
+      "baseline_tier": 2,
+      "official_entry": "https://truist.wd1.myworkdayjobs.com/en-US/Careers",
+      "domains": [
+        "truist.wd1.myworkdayjobs.com"
+      ],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/commercial-banking-and-investment-banking/truist-bank",
+      "known_providers": [
+        "workday"
+      ],
+      "provider_stratum": "workday"
+    },
+    {
+      "employer": "Susquehanna International Group",
+      "sector": "BANKING",
+      "dataset": "vault_banking_prestige",
+      "raw_id": 2210,
+      "source_external_id": "/company-profiles/commercial-banking-and-investment-banking/susquehanna-international-group",
+      "company_id": null,
+      "baseline_tier": null,
+      "official_entry": null,
+      "domains": [],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/commercial-banking-and-investment-banking/susquehanna-international-group",
+      "known_providers": [],
+      "provider_stratum": "UNKNOWN"
+    },
+    {
+      "employer": "Morgan Stanley",
+      "sector": "BANKING",
+      "dataset": "vault_banking_prestige",
+      "raw_id": 2175,
+      "source_external_id": "/company-profiles/commercial-banking-and-investment-banking/morgan-stanley",
+      "company_id": 39,
+      "baseline_tier": 1,
+      "official_entry": "https://www.morganstanley.com/people-opportunities/students-graduates/programs",
+      "domains": [
+        "www.morganstanley.com",
+        "morganstanley.com"
+      ],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/commercial-banking-and-investment-banking/morgan-stanley",
+      "known_providers": [
+        "custom_unidentified"
+      ],
+      "provider_stratum": "custom_unidentified"
+    },
+    {
+      "employer": "Houlihan Lokey",
+      "sector": "BANKING",
+      "dataset": "vault_banking_prestige",
+      "raw_id": 2188,
+      "source_external_id": "/company-profiles/commercial-banking-and-investment-banking/houlihan-lokey",
+      "company_id": 737,
+      "baseline_tier": 2,
+      "official_entry": "https://hl.wd1.myworkdayjobs.com/Campus/job/New-York-NY-USA/Summer-2027-Research-Intern--Portfolio-Valuation--New-York_R3535",
+      "domains": [
+        "hl.wd1.myworkdayjobs.com"
+      ],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/commercial-banking-and-investment-banking/houlihan-lokey",
+      "known_providers": [
+        "workday"
+      ],
+      "provider_stratum": "workday"
+    },
+    {
+      "employer": "Insigniam",
+      "sector": "CONSULTING",
+      "dataset": "vault_consulting",
+      "raw_id": 1890,
+      "source_external_id": "/company-profiles/management-strategy/insigniam",
+      "company_id": 981,
+      "baseline_tier": 2,
+      "official_entry": null,
+      "domains": [],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/management-strategy/insigniam",
+      "known_providers": [],
+      "provider_stratum": "UNKNOWN"
+    },
+    {
+      "employer": "Roland Berger",
+      "sector": "CONSULTING",
+      "dataset": "vault_consulting",
+      "raw_id": 1850,
+      "source_external_id": "/company-profiles/management-strategy/roland-berger",
+      "company_id": 554,
+      "baseline_tier": 2,
+      "official_entry": "https://www.rolandberger.com/en/Join/All-Jobs/",
+      "domains": [
+        "www.rolandberger.com",
+        "rolandberger.com"
+      ],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/management-strategy/roland-berger",
+      "known_providers": [
+        "custom_unidentified"
+      ],
+      "provider_stratum": "custom_unidentified"
+    },
+    {
+      "employer": "The Brattle Group",
+      "sector": "CONSULTING",
+      "dataset": "vault_consulting",
+      "raw_id": 1857,
+      "source_external_id": "/company-profiles/management-strategy/the-brattle-group",
+      "company_id": 732,
+      "baseline_tier": 2,
+      "official_entry": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4735519005",
+      "domains": [
+        "job-boards.greenhouse.io"
+      ],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/management-strategy/the-brattle-group",
+      "known_providers": [
+        "greenhouse"
+      ],
+      "provider_stratum": "greenhouse"
+    },
+    {
+      "employer": "Arthur D. Little",
+      "sector": "CONSULTING",
+      "dataset": "vault_consulting",
+      "raw_id": 1855,
+      "source_external_id": "/company-profiles/management-strategy/arthur-d-little",
+      "company_id": 653,
+      "baseline_tier": 2,
+      "official_entry": "https://careers-adlittle.icims.com/jobs/search",
+      "domains": [
+        "careers-adlittle.icims.com"
+      ],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/management-strategy/arthur-d-little",
+      "known_providers": [
+        "icims"
+      ],
+      "provider_stratum": "icims"
+    },
+    {
+      "employer": "The Cambridge Group, LLC",
+      "sector": "CONSULTING",
+      "dataset": "vault_consulting",
+      "raw_id": 1867,
+      "source_external_id": "/company-profiles/management-strategy/the-cambridge-group",
+      "company_id": 958,
+      "baseline_tier": 2,
+      "official_entry": null,
+      "domains": [],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/management-strategy/the-cambridge-group",
+      "known_providers": [],
+      "provider_stratum": "UNKNOWN"
+    },
+    {
+      "employer": "Boston Consulting Group (BCG)",
+      "sector": "CONSULTING",
+      "dataset": "vault_consulting",
+      "raw_id": 1847,
+      "source_external_id": "/company-profiles/management-strategy/boston-consulting-group",
+      "company_id": 556,
+      "baseline_tier": 1,
+      "official_entry": "https://careers.bcg.com/global/en",
+      "domains": [
+        "careers.bcg.com",
+        "bcg.com"
+      ],
+      "publisher_profile": "https://legacy.vault.com/company-profiles/management-strategy/boston-consulting-group",
+      "known_providers": [
+        "custom_unidentified",
+        "phenom"
+      ],
+      "provider_stratum": "custom_unidentified"
+    },
+    {
+      "employer": "Sequoia Capital Global Equities",
+      "sector": "ASSET_MANAGEMENT",
+      "dataset": "mfa_members",
+      "raw_id": 2358,
+      "source_external_id": "613",
+      "company_id": null,
+      "baseline_tier": null,
+      "official_entry": null,
+      "domains": [
+        "sequoiacap.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [],
+      "provider_stratum": "UNKNOWN"
+    },
+    {
+      "employer": "Fidelity Investments",
+      "sector": "ASSET_MANAGEMENT",
+      "dataset": "mfa_members",
+      "raw_id": 2230,
+      "source_external_id": "854929",
+      "company_id": 509,
+      "baseline_tier": 1,
+      "official_entry": "https://fmr.wd1.myworkdayjobs.com/fidelitycareers/job/Westlake-TX/Summer-2027-Undergraduate-Internship---Operations_2134162",
+      "domains": [
+        "fmr.wd1.myworkdayjobs.com",
+        "fidelity.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "custom_unidentified",
+        "workday"
+      ],
+      "provider_stratum": "custom_unidentified"
+    },
+    {
+      "employer": "Garda Capital Partners",
+      "sector": "ASSET_MANAGEMENT",
+      "dataset": "mfa_members",
+      "raw_id": 2292,
+      "source_external_id": "9159",
+      "company_id": 691,
+      "baseline_tier": 3,
+      "official_entry": "https://job-boards.greenhouse.io/gardacp/jobs/6163540004",
+      "domains": [
+        "job-boards.greenhouse.io",
+        "gardacp.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "greenhouse"
+      ],
+      "provider_stratum": "greenhouse"
+    },
+    {
+      "employer": "Wellington Management",
+      "sector": "ASSET_MANAGEMENT",
+      "dataset": "mfa_members",
+      "raw_id": 2387,
+      "source_external_id": "9155",
+      "company_id": 827,
+      "baseline_tier": 1,
+      "official_entry": "https://www.wellington.com/en/careers",
+      "domains": [
+        "wellington.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "workday"
+      ],
+      "provider_stratum": "workday"
+    },
+    {
+      "employer": "Coatue Management LLC",
+      "sector": "ASSET_MANAGEMENT",
+      "dataset": "mfa_members",
+      "raw_id": 2273,
+      "source_external_id": "548",
+      "company_id": null,
+      "baseline_tier": null,
+      "official_entry": null,
+      "domains": [
+        "coatue.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [],
+      "provider_stratum": "UNKNOWN"
+    },
+    {
+      "employer": "Apollo Global Management",
+      "sector": "ASSET_MANAGEMENT",
+      "dataset": "mfa_members",
+      "raw_id": 2221,
+      "source_external_id": "21134",
+      "company_id": 143,
+      "baseline_tier": 2,
+      "official_entry": null,
+      "domains": [
+        "apollo.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "custom_unidentified"
+      ],
+      "provider_stratum": "custom_unidentified"
+    },
+    {
+      "employer": "Equitable Holdings",
+      "sector": "CORPORATE_BUSINESS",
+      "dataset": "legacy_fortune_2026",
+      "raw_id": 1204,
+      "source_external_id": "379",
+      "company_id": 379,
+      "baseline_tier": 2,
+      "official_entry": "https://equitable.gr8people.com/jobs/10156/2027-summer-intern-financial-risk",
+      "domains": [
+        "equitable.gr8people.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [],
+      "provider_stratum": "UNKNOWN"
+    },
+    {
+      "employer": "Fannie Mae",
+      "sector": "CORPORATE_BUSINESS",
+      "dataset": "legacy_fortune_2026",
+      "raw_id": 851,
+      "source_external_id": "26",
+      "company_id": 26,
+      "baseline_tier": 1,
+      "official_entry": "https://www.fanniemae.com/careers/search-all-jobs",
+      "domains": [
+        "www.fanniemae.com",
+        "fanniemae.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "custom_unidentified",
+        "workday"
+      ],
+      "provider_stratum": "custom_unidentified"
+    },
+    {
+      "employer": "American Express",
+      "sector": "CORPORATE_BUSINESS",
+      "dataset": "legacy_fortune_2026",
+      "raw_id": 881,
+      "source_external_id": "56",
+      "company_id": 56,
+      "baseline_tier": 2,
+      "official_entry": "https://aexp.eightfold.ai/careers",
+      "domains": [
+        "aexp.eightfold.ai"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "eightfold"
+      ],
+      "provider_stratum": "eightfold"
+    },
+    {
+      "employer": "Bitgo Holdings",
+      "sector": "CORPORATE_BUSINESS",
+      "dataset": "legacy_fortune_2026",
+      "raw_id": 1103,
+      "source_external_id": "278",
+      "company_id": 278,
+      "baseline_tier": 2,
+      "official_entry": "https://job-boards.greenhouse.io/bitgo",
+      "domains": [
+        "job-boards.greenhouse.io"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "greenhouse"
+      ],
+      "provider_stratum": "greenhouse"
+    },
+    {
+      "employer": "Ford Motor",
+      "sector": "CORPORATE_BUSINESS",
+      "dataset": "legacy_fortune_2026",
+      "raw_id": 847,
+      "source_external_id": "22",
+      "company_id": 22,
+      "baseline_tier": 2,
+      "official_entry": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions",
+      "domains": [
+        "efds.fa.em5.oraclecloud.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "oracle"
+      ],
+      "provider_stratum": "oracle"
+    },
+    {
+      "employer": "Avery Dennison",
+      "sector": "CORPORATE_BUSINESS",
+      "dataset": "legacy_fortune_2026",
+      "raw_id": 1273,
+      "source_external_id": "448",
+      "company_id": 448,
+      "baseline_tier": 2,
+      "official_entry": "https://jobs.smartrecruiters.com/AveryDennison",
+      "domains": [
+        "jobs.smartrecruiters.com"
+      ],
+      "publisher_profile": null,
+      "known_providers": [
+        "smartrecruiters"
+      ],
+      "provider_stratum": "smartrecruiters"
+    }
+  ],
+  "tier_strata": {
+    "2": 14,
+    "1": 6,
+    "None": 3,
+    "3": 1
+  },
+  "provider_strata": {
+    "UNKNOWN": 7,
+    "custom_unidentified": 7,
+    "workday": 3,
+    "greenhouse": 3,
+    "icims": 1,
+    "eightfold": 1,
+    "oracle": 1,
+    "smartrecruiters": 1
+  },
+  "sha256": "0a7a257a81c585d2be5b6e42c7dbbc86cf74f4f6346be1b5b8c6e8e06a38c0bb"
+}

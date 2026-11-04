@@ -1,0 +1,12 @@
+BEGIN IMMEDIATE;
+CREATE TABLE source_censuses(id INTEGER PRIMARY KEY,source_id INTEGER NOT NULL REFERENCES sources(id),observed_at TEXT NOT NULL,previous_success_at TEXT,inventory_count INTEGER NOT NULL,identity_sha256 TEXT NOT NULL);
+CREATE INDEX census_source ON source_censuses(source_id,id);
+CREATE TABLE discovery_events(id INTEGER PRIMARY KEY,census_id INTEGER NOT NULL REFERENCES source_censuses(id),source_id INTEGER NOT NULL REFERENCES sources(id),identity TEXT NOT NULL,requisition TEXT,canonical_url TEXT,job_id INTEGER REFERENCES jobs(id),kind TEXT NOT NULL,observed_at TEXT NOT NULL,previous_success_at TEXT,classification TEXT NOT NULL,publication TEXT NOT NULL,known_job_before INTEGER NOT NULL DEFAULT 0,UNIQUE(census_id,identity,kind));
+CREATE TABLE monitoring_runs(id TEXT PRIMARY KEY,environment TEXT NOT NULL,trigger TEXT NOT NULL,workflow_run_id TEXT,run_attempt TEXT,repository TEXT,started_at TEXT NOT NULL,finished_at TEXT,status TEXT NOT NULL,metrics TEXT NOT NULL);
+CREATE TABLE discovery_deliveries(event_id INTEGER NOT NULL REFERENCES discovery_events(id),run_id TEXT NOT NULL REFERENCES monitoring_runs(id),checked_at TEXT NOT NULL,result TEXT NOT NULL,PRIMARY KEY(event_id,run_id));
+CREATE TABLE reliability_evaluations(id TEXT PRIMARY KEY,initialized_at TEXT NOT NULL,timezone TEXT NOT NULL,first_hosted_at TEXT,window_start TEXT,days INTEGER NOT NULL DEFAULT 7);
+CREATE TABLE deployment_configuration(revision TEXT PRIMARY KEY,adopted_at TEXT NOT NULL,result TEXT NOT NULL);
+CREATE TABLE source_onboarding(source_id INTEGER PRIMARY KEY REFERENCES sources(id),revision TEXT NOT NULL,evidence TEXT NOT NULL);
+CREATE TABLE deployment_scope_plans(company_id INTEGER PRIMARY KEY REFERENCES companies(id),required_source_ids TEXT NOT NULL,evidence TEXT NOT NULL,revision TEXT NOT NULL);
+INSERT INTO schema_version(version) VALUES(9);
+COMMIT;

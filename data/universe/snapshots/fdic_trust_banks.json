@@ -1,0 +1,2150 @@
+{
+  "request_url": "https://api.fdic.gov/banks/institutions?filters=ACTIVE%3A1+AND+NAME%3A%2ATrust%2A+AND+ASSET%3A%5B1000000+TO+%2A%5D&fields=NAME%2CCERT%2CASSET%2CWEBADDR%2CNAMEHCR%2CREGAGNT%2CCITY%2CSTALP%2CTRUST%2CESTYMD&limit=10000&format=json",
+  "response": {
+    "meta": {
+      "total": 133,
+      "parameters": {
+        "filters": "ACTIVE:1 AND NAME:*Trust* AND ASSET:[1000000 TO *]",
+        "fields": "NAME,CERT,ASSET,WEBADDR,NAMEHCR,REGAGNT,CITY,STALP,TRUST,ESTYMD",
+        "limit": "10000"
+      },
+      "index": {
+        "name": "institutions_20261030090007",
+        "createTimestamp": "2026-10-30T11:58:49Z"
+      }
+    },
+    "data": [
+      {
+        "data": {
+          "NAMEHCR": "NEB CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Fond Du Lac",
+          "WEBADDR": "https://www.nebat.com",
+          "ASSET": 2890553,
+          "CERT": 10044,
+          "STALP": "WI",
+          "ESTYMD": "12/20/1933",
+          "TRUST": "10",
+          "NAME": "National Exchange Bank and Trust",
+          "ID": "10044"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WATFORD CITY BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Watford City",
+          "WEBADDR": "www.fibt.com",
+          "ASSET": 6175429,
+          "CERT": 10248,
+          "STALP": "ND",
+          "ESTYMD": "05/01/1910",
+          "TRUST": "10",
+          "NAME": "First International Bank & Trust",
+          "ID": "10248"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FARMERS BCORP INC",
+          "REGAGNT": "FED",
+          "CITY": "Blytheville",
+          "WEBADDR": "www.myfm.bank",
+          "ASSET": 1363808,
+          "CERT": 1027,
+          "STALP": "AR",
+          "ESTYMD": "03/16/1908",
+          "TRUST": "10",
+          "NAME": "Fm Bank And Trust",
+          "ID": "1027"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "JBT BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Jonestown",
+          "WEBADDR": "www.jbt.bank",
+          "ASSET": 1005140,
+          "CERT": 10677,
+          "STALP": "PA",
+          "ESTYMD": "01/01/1873",
+          "TRUST": "10",
+          "NAME": "Jonestown Bank and Trust Company, of Jonestown, Pennsylvania",
+          "ID": "10677"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "STEELE BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Mifflinburg",
+          "WEBADDR": "www.centralpennbank.com",
+          "ASSET": 1266788,
+          "CERT": 10685,
+          "STALP": "PA",
+          "ESTYMD": "01/01/1872",
+          "TRUST": "10",
+          "NAME": "Central Penn Bank & Trust",
+          "ID": "10685"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "PEAPACK-GLADSTONE FINL CORP",
+          "REGAGNT": "FED",
+          "CITY": "Bedminster",
+          "WEBADDR": "www.peapackprivate.com",
+          "ASSET": 7963962,
+          "CERT": 11035,
+          "STALP": "NJ",
+          "ESTYMD": "09/21/1921",
+          "TRUST": "10",
+          "NAME": "Peapack Private Bank & Trust",
+          "ID": "11035"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST CITIZENS BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Raleigh",
+          "WEBADDR": "www.firstcitizens.com",
+          "ASSET": 236317000,
+          "CERT": 11063,
+          "STALP": "NC",
+          "ESTYMD": "01/01/1898",
+          "TRUST": "10",
+          "NAME": "First-Citizens Bank & Trust Company",
+          "ID": "11063"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SOMERSET TRUST HOLDING CO",
+          "REGAGNT": "FDIC",
+          "CITY": "Somerset",
+          "WEBADDR": "somersettrust.com",
+          "ASSET": 2467590,
+          "CERT": 11112,
+          "STALP": "PA",
+          "ESTYMD": "01/01/1889",
+          "TRUST": "10",
+          "NAME": "Somerset Trust Company",
+          "ID": "11112"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "LEACKCO BANK HOLDING CO INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Sioux Falls",
+          "WEBADDR": "www.abt.bank",
+          "ASSET": 2248298,
+          "CERT": 1117,
+          "STALP": "SD",
+          "ESTYMD": "01/01/1892",
+          "TRUST": "10",
+          "NAME": "American Bank & Trust",
+          "ID": "1117"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BURKE&HERBERT FINL SERVICES",
+          "REGAGNT": "FED",
+          "CITY": "Alexandria",
+          "WEBADDR": "www.burkeandherbertbank.com",
+          "ASSET": 10984290,
+          "CERT": 11578,
+          "STALP": "VA",
+          "ESTYMD": "01/01/1852",
+          "TRUST": "10",
+          "NAME": "Burke & Herbert Bank & Trust Company",
+          "ID": "11578"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BAR HARBOR BANKSHARES",
+          "REGAGNT": "FDIC",
+          "CITY": "Bar Harbor",
+          "WEBADDR": "www.barharbor.bank",
+          "ASSET": 4734427,
+          "CERT": 11971,
+          "STALP": "ME",
+          "ESTYMD": "09/15/1887",
+          "TRUST": "10",
+          "NAME": "Bar Harbor Bank & Trust",
+          "ID": "11971"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "EVANGELINE BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Ville Platte",
+          "WEBADDR": "www.therealbank.com",
+          "ASSET": 1113786,
+          "CERT": 12611,
+          "STALP": "LA",
+          "ESTYMD": "01/01/1933",
+          "TRUST": "10",
+          "NAME": "The Evangeline Bank and Trust Company",
+          "ID": "12611"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CENTRAL BANCOMPANY INC",
+          "REGAGNT": "FED",
+          "CITY": "Jefferson City",
+          "WEBADDR": "www.centralbank.net",
+          "ASSET": 20307848,
+          "CERT": 12633,
+          "STALP": "MO",
+          "ESTYMD": "02/03/1902",
+          "TRUST": "40",
+          "NAME": "The Central Trust Bank",
+          "ID": "12633"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "W T B FINANCIAL CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Spokane",
+          "WEBADDR": "www.watrust.com",
+          "ASSET": 10536386,
+          "CERT": 1281,
+          "STALP": "WA",
+          "ESTYMD": "11/03/1902",
+          "TRUST": "10",
+          "NAME": "Washington Trust Bank",
+          "ID": "1281"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST FARMERS FINANCIAL CORP",
+          "REGAGNT": "FED",
+          "CITY": "Converse",
+          "WEBADDR": "www.ffbt.com",
+          "ASSET": 3495725,
+          "CERT": 12839,
+          "STALP": "IN",
+          "ESTYMD": "01/01/1932",
+          "TRUST": "10",
+          "NAME": "First Farmers Bank & Trust Co.",
+          "ID": "12839"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "KATAHDIN BANKSHARES CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Patten",
+          "WEBADDR": "www.katahdintrust.com",
+          "ASSET": 1158202,
+          "CERT": 12874,
+          "STALP": "ME",
+          "ESTYMD": "03/07/1918",
+          "TRUST": "30",
+          "NAME": "Katahdin Trust Company",
+          "ID": "12874"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "MAGNOLIA BANKING CORP",
+          "REGAGNT": "FED",
+          "CITY": "Magnolia",
+          "WEBADDR": "www.myfarmers.bank",
+          "ASSET": 3159678,
+          "CERT": 1291,
+          "STALP": "AR",
+          "ESTYMD": "01/01/1906",
+          "TRUST": "10",
+          "NAME": "Farmers Bank & Trust Company",
+          "ID": "1291"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "ORANGE COUNTY BCORP INC",
+          "REGAGNT": "FED",
+          "CITY": "Middletown",
+          "WEBADDR": "www.orangebanktrust.com",
+          "ASSET": 2792253,
+          "CERT": 12944,
+          "STALP": "NY",
+          "ESTYMD": "05/02/1892",
+          "TRUST": "10",
+          "NAME": "Orange Bank & Trust Company",
+          "ID": "12944"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "EVOLVE BCORP INC",
+          "REGAGNT": "FED",
+          "CITY": "West Memphis",
+          "WEBADDR": "www.getevolved.com",
+          "ASSET": 1188644,
+          "CERT": 1299,
+          "STALP": "AR",
+          "ESTYMD": "06/05/1925",
+          "TRUST": "10",
+          "NAME": "Evolve Bank & Trust",
+          "ID": "1299"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SB FINANCIAL GROUP INC",
+          "REGAGNT": "FED",
+          "CITY": "Defiance",
+          "WEBADDR": "www.yourstatebank.com",
+          "ASSET": 1612519,
+          "CERT": 13339,
+          "STALP": "OH",
+          "ESTYMD": "03/28/1902",
+          "TRUST": "10",
+          "NAME": "The State Bank and Trust Company",
+          "ID": "13339"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FARMERS&MERCHANTS INV INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Lincoln",
+          "WEBADDR": "www.ubt.com",
+          "ASSET": 9238781,
+          "CERT": 13421,
+          "STALP": "NE",
+          "ESTYMD": "02/28/1917",
+          "TRUST": "10",
+          "NAME": "Union Bank and Trust Company",
+          "ID": "13421"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "PBT BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Mcpherson",
+          "WEBADDR": "http://www.peoples.bank",
+          "ASSET": 1591618,
+          "CERT": 1365,
+          "STALP": "KS",
+          "ESTYMD": "11/01/1898",
+          "TRUST": "40",
+          "NAME": "Peoples Bank and Trust Company",
+          "ID": "1365"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FRANDSEN FINANCIAL CORP",
+          "REGAGNT": "FED",
+          "CITY": "Lonsdale",
+          "WEBADDR": "frandsenbank.com",
+          "ASSET": 3656900,
+          "CERT": 1399,
+          "STALP": "MN",
+          "ESTYMD": "08/01/1901",
+          "TRUST": "10",
+          "NAME": "Frandsen Bank & Trust",
+          "ID": "1399"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "STATE STREET CORP",
+          "REGAGNT": "FED",
+          "CITY": "Boston",
+          "WEBADDR": "www.statestreet.com",
+          "ASSET": 412620000,
+          "CERT": 14,
+          "STALP": "MA",
+          "ESTYMD": "01/01/1792",
+          "TRUST": "10",
+          "NAME": "State Street Bank and Trust Company",
+          "ID": "14"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIDELITY CO",
+          "REGAGNT": "FDIC",
+          "CITY": "Dubuque",
+          "WEBADDR": "http://www.bankfidelity.com; www.bankfidelity.bank",
+          "ASSET": 2603348,
+          "CERT": 14382,
+          "STALP": "IA",
+          "ESTYMD": "04/20/1910",
+          "TRUST": "40",
+          "NAME": "Fidelity Bank & Trust",
+          "ID": "14382"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "HILLS BCORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Hills",
+          "WEBADDR": "www.hillsbank.com",
+          "ASSET": 4794969,
+          "CERT": 14650,
+          "STALP": "IA",
+          "ESTYMD": "01/01/1904",
+          "TRUST": "10",
+          "NAME": "Hills Bank and Trust Company",
+          "ID": "14650"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FLAGSHIP FINANCIAL GROUP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Glencoe",
+          "WEBADDR": "www.security-banks.com",
+          "ASSET": 1328769,
+          "CERT": 15324,
+          "STALP": "MN",
+          "ESTYMD": "10/12/1935",
+          "TRUST": "20",
+          "NAME": "Security Bank & Trust Company",
+          "ID": "15324"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SOUTHERN BANCSHARES N C INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Mount Olive",
+          "WEBADDR": "www.southernbank.com",
+          "ASSET": 5304325,
+          "CERT": 15359,
+          "STALP": "NC",
+          "ESTYMD": "01/01/1901",
+          "TRUST": "10",
+          "NAME": "Southern Bank and Trust Company",
+          "ID": "15359"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CENTRAL BANCSHARES INC",
+          "REGAGNT": "FED",
+          "CITY": "Muscatine",
+          "WEBADDR": "www.cbibt.bank",
+          "ASSET": 1703404,
+          "CERT": 1552,
+          "STALP": "IA",
+          "ESTYMD": "06/13/1933",
+          "TRUST": "10",
+          "NAME": "CBI Bank & Trust",
+          "ID": "1552"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BELLE FOURCHE BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Belle Fourche",
+          "WEBADDR": "www.pioneerbankandtrust.com",
+          "ASSET": 1009488,
+          "CERT": 15562,
+          "STALP": "SD",
+          "ESTYMD": "08/30/1937",
+          "TRUST": "10",
+          "NAME": "Pioneer Bank & Trust",
+          "ID": "15562"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "DAKOTA COMMUNITY BANSHARES INC",
+          "REGAGNT": "OCC",
+          "CITY": "Hebron",
+          "WEBADDR": "www.dakotacommunitybank.com",
+          "ASSET": 1388252,
+          "CERT": 15728,
+          "STALP": "ND",
+          "ESTYMD": "01/01/1940",
+          "TRUST": "10",
+          "NAME": "Dakota Community Bank & Trust, National Association",
+          "ID": "15728"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SECURITY HOLDING CO",
+          "REGAGNT": "FDIC",
+          "CITY": "Fredericksburg",
+          "WEBADDR": "https://www.ssbtexas.com",
+          "ASSET": 2176648,
+          "CERT": 15809,
+          "STALP": "TX",
+          "ESTYMD": "04/07/1941",
+          "TRUST": "10",
+          "NAME": "Security State Bank & Trust",
+          "ID": "15809"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CENTRAL BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Lexington",
+          "WEBADDR": "www.centralbank.com",
+          "ASSET": 4011565,
+          "CERT": 15815,
+          "STALP": "KY",
+          "ESTYMD": "04/15/1938",
+          "TRUST": "10",
+          "NAME": "Central Bank & Trust Co.",
+          "ID": "15815"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "GUARANTY CAPITAL CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Belzoni",
+          "WEBADDR": "www.gbtonline.com",
+          "ASSET": 3069091,
+          "CERT": 15953,
+          "STALP": "MS",
+          "ESTYMD": "05/17/1943",
+          "TRUST": "10",
+          "NAME": "Guaranty Bank and Trust Company",
+          "ID": "15953"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST BANKERS TRUSTSHARES INC",
+          "REGAGNT": "OCC",
+          "CITY": "Quincy",
+          "WEBADDR": "www.firstbankers.com",
+          "ASSET": 1223841,
+          "CERT": 16501,
+          "STALP": "IL",
+          "ESTYMD": "10/23/1946",
+          "TRUST": "10",
+          "NAME": "First Bankers Trust Company, National Association",
+          "ID": "16501"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FEO INVESTMENTS INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Norfolk",
+          "WEBADDR": "www.evb.bank",
+          "ASSET": 1490613,
+          "CERT": 16553,
+          "STALP": "NE",
+          "ESTYMD": "07/06/1943",
+          "TRUST": "40",
+          "NAME": "Elkhorn Valley Bank & Trust",
+          "ID": "16553"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "PADUCAH BANK SHARES INC",
+          "REGAGNT": "FED",
+          "CITY": "Paducah",
+          "WEBADDR": "www.paducahbank.com",
+          "ASSET": 1067411,
+          "CERT": 16664,
+          "STALP": "KY",
+          "ESTYMD": "01/24/1948",
+          "TRUST": "10",
+          "NAME": "The Paducah Bank and Trust Company",
+          "ID": "16664"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST ARKANSAS BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Jacksonville",
+          "WEBADDR": "www.fabandt.bank",
+          "ASSET": 1140573,
+          "CERT": 16849,
+          "STALP": "AR",
+          "ESTYMD": "11/05/1949",
+          "TRUST": "10",
+          "NAME": "First Arkansas Bank and Trust",
+          "ID": "16849"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FARMERS ENTERPRISES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Great Bend",
+          "WEBADDR": "www.farmersbankks.com",
+          "ASSET": 1053887,
+          "CERT": 17614,
+          "STALP": "KS",
+          "ESTYMD": "08/01/1907",
+          "TRUST": "10",
+          "NAME": "Farmers Bank & Trust",
+          "ID": "17614"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BEACON FINANCIAL CORP",
+          "REGAGNT": "FED",
+          "CITY": "Boston",
+          "WEBADDR": "www.beaconbank.com",
+          "ASSET": 22201546,
+          "CERT": 17798,
+          "STALP": "MA",
+          "ESTYMD": "01/01/1871",
+          "TRUST": "00",
+          "NAME": "Beacon Bank and Trust",
+          "ID": "17798"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "RJ POPE MANAGEMENT GP LLC",
+          "REGAGNT": "FDIC",
+          "CITY": "Longview",
+          "WEBADDR": "www.texasbankandtrust.com",
+          "ASSET": 4339112,
+          "CERT": 17842,
+          "STALP": "TX",
+          "ESTYMD": "03/04/1958",
+          "TRUST": "10",
+          "NAME": "Texas Bank and Trust Company",
+          "ID": "17842"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "COMMERCE B&T HOLDING EMPLOYEE STK OWNERSHIP PLAN",
+          "REGAGNT": "FDIC",
+          "CITY": "Topeka",
+          "WEBADDR": "www.cbtks.com",
+          "ASSET": 1255376,
+          "CERT": 18100,
+          "STALP": "KS",
+          "ESTYMD": "11/30/1959",
+          "TRUST": "10",
+          "NAME": "CoreFirst Bank & Trust",
+          "ID": "18100"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "COMMUNITY BK HOLDINGS TX INC",
+          "REGAGNT": "OCC",
+          "CITY": "Corsicana",
+          "WEBADDR": "WWW.MYBANKTX.COM",
+          "ASSET": 1681828,
+          "CERT": 18185,
+          "STALP": "TX",
+          "ESTYMD": "01/01/1934",
+          "TRUST": "10",
+          "NAME": "Community National Bank & Trust of Texas",
+          "ID": "18185"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "NORTHERN BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Woburn",
+          "WEBADDR": "www.nbtc.com",
+          "ASSET": 3384849,
+          "CERT": 18266,
+          "STALP": "MA",
+          "ESTYMD": "02/25/1960",
+          "TRUST": "20",
+          "NAME": "Northern Bank & Trust Company",
+          "ID": "18266"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "",
+          "REGAGNT": "FDIC",
+          "CITY": "Dallas",
+          "WEBADDR": "www.ndbt.com",
+          "ASSET": 1809980,
+          "CERT": 18355,
+          "STALP": "TX",
+          "ESTYMD": "03/20/1961",
+          "TRUST": "10",
+          "NAME": "North Dallas Bank & Trust Co.",
+          "ID": "18355"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BLACKHAWK BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Milan",
+          "WEBADDR": "www.choosethechief.com",
+          "ASSET": 2036767,
+          "CERT": 18402,
+          "STALP": "IL",
+          "ESTYMD": "06/28/1961",
+          "TRUST": "10",
+          "NAME": "Blackhawk Bank & Trust",
+          "ID": "18402"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "ADAGE LLC",
+          "REGAGNT": "FED",
+          "CITY": "Ogallala",
+          "WEBADDR": "http://www.abtbank.com",
+          "ASSET": 1291499,
+          "CERT": 18489,
+          "STALP": "NE",
+          "ESTYMD": "02/26/1962",
+          "TRUST": "10",
+          "NAME": "Adams Bank & Trust",
+          "ID": "18489"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "PARKWAY BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Harwood Heights",
+          "WEBADDR": "www.parkwaybank.com",
+          "ASSET": 3655049,
+          "CERT": 19008,
+          "STALP": "IL",
+          "ESTYMD": "01/22/1964",
+          "TRUST": "10",
+          "NAME": "Parkway Bank and Trust Company",
+          "ID": "19008"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WESTBRAND INC",
+          "REGAGNT": "FED",
+          "CITY": "Minot",
+          "WEBADDR": "www.firstwestern.bank",
+          "ASSET": 2386276,
+          "CERT": 19123,
+          "STALP": "ND",
+          "ESTYMD": "05/11/1964",
+          "TRUST": "10",
+          "NAME": "First Western Bank & Trust",
+          "ID": "19123"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BESSEMER GROUP INC THE",
+          "REGAGNT": "FDIC",
+          "CITY": "Woodbridge",
+          "WEBADDR": "http://www.bessemertrust.com",
+          "ASSET": 2362517,
+          "CERT": 20015,
+          "STALP": "NJ",
+          "ESTYMD": "01/01/1907",
+          "TRUST": "10",
+          "NAME": "Bessemer Trust Company",
+          "ID": "20015"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "HBT FINANCIAL INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Bloomington",
+          "WEBADDR": "http://www.hbtbank.com",
+          "ASSET": 6721503,
+          "CERT": 20369,
+          "STALP": "IL",
+          "ESTYMD": "02/22/1971",
+          "TRUST": "10",
+          "NAME": "Heartland Bank and Trust Company",
+          "ID": "20369"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "LIBERTY FINANCIAL SERVICES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "New Orleans",
+          "WEBADDR": "www.libertybank.net",
+          "ASSET": 1129360,
+          "CERT": 20856,
+          "STALP": "LA",
+          "ESTYMD": "11/16/1972",
+          "TRUST": "00",
+          "NAME": "Liberty Bank and Trust Company",
+          "ID": "20856"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "QUEENSBOROUGH CO THE",
+          "REGAGNT": "OCC",
+          "CITY": "Louisville",
+          "WEBADDR": "www.qnbtrust.bank",
+          "ASSET": 2280085,
+          "CERT": 2138,
+          "STALP": "GA",
+          "ESTYMD": "01/01/1902",
+          "TRUST": "10",
+          "NAME": "Queensborough National Bank & Trust Company",
+          "ID": "2138"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BESSEMER GROUP INC THE",
+          "REGAGNT": "OCC",
+          "CITY": "New York",
+          "WEBADDR": "http://www.bessemertrust.com",
+          "ASSET": 4162383,
+          "CERT": 21868,
+          "STALP": "NY",
+          "ESTYMD": "12/20/1974",
+          "TRUST": "10",
+          "NAME": "Bessemer Trust Company, National Association",
+          "ID": "21868"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "MONTECITO BCORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Santa Barbara",
+          "WEBADDR": "www.montecito.bank",
+          "ASSET": 2018080,
+          "CERT": 21956,
+          "STALP": "CA",
+          "ESTYMD": "03/17/1975",
+          "TRUST": "10",
+          "NAME": "Montecito Bank & Trust",
+          "ID": "21956"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SOUTHERN BCORP INC",
+          "REGAGNT": "FED",
+          "CITY": "Mountain Grove",
+          "WEBADDR": "www.legacybankandtrust.com",
+          "ASSET": 1845409,
+          "CERT": 22319,
+          "STALP": "MO",
+          "ESTYMD": "10/17/1907",
+          "TRUST": "00",
+          "NAME": "Legacy Bank & Trust Company",
+          "ID": "22319"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "AMERIBANCSHARES INC",
+          "REGAGNT": "OCC",
+          "CITY": "Wichita Falls",
+          "WEBADDR": "www.amnat.com",
+          "ASSET": 2536428,
+          "CERT": 22373,
+          "STALP": "TX",
+          "ESTYMD": "11/29/1976",
+          "TRUST": "10",
+          "NAME": "American National Bank & Trust",
+          "ID": "22373"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST BCORP INC",
+          "REGAGNT": "FED",
+          "CITY": "Lebanon",
+          "WEBADDR": "www.firstbank.com",
+          "ASSET": 4275801,
+          "CERT": 22918,
+          "STALP": "VA",
+          "ESTYMD": "08/03/1979",
+          "TRUST": "10",
+          "NAME": "The First Bank and Trust Company",
+          "ID": "22918"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BANK OF NY MELLON CORP THE",
+          "REGAGNT": "OCC",
+          "CITY": "Los Angeles",
+          "WEBADDR": "www.bny.com",
+          "ASSET": 1372597,
+          "CERT": 23472,
+          "STALP": "CA",
+          "ESTYMD": "07/01/1981",
+          "TRUST": "20",
+          "NAME": "The Bank of New York Mellon Trust Company, National Association",
+          "ID": "23472"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WASHINGTON TRUST BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Westerly",
+          "WEBADDR": "www.washtrust.com",
+          "ASSET": 6551001,
+          "CERT": 23623,
+          "STALP": "RI",
+          "ESTYMD": "01/01/1800",
+          "TRUST": "10",
+          "NAME": "The Washington Trust Company, of Westerly",
+          "ID": "23623"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "REPUBLIC BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Louisville",
+          "WEBADDR": "www.republicbank.com",
+          "ASSET": 7054835,
+          "CERT": 23627,
+          "STALP": "KY",
+          "ESTYMD": "01/11/1982",
+          "TRUST": "10",
+          "NAME": "Republic Bank & Trust Company",
+          "ID": "23627"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "STOCK YARDS BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Louisville",
+          "WEBADDR": "www.syb.com",
+          "ASSET": 10360306,
+          "CERT": 258,
+          "STALP": "KY",
+          "ESTYMD": "06/01/1904",
+          "TRUST": "10",
+          "NAME": "Stock Yards Bank & Trust Company",
+          "ID": "258"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST AMERICAN FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Santa Ana",
+          "WEBADDR": "www.firstamtrust.com",
+          "ASSET": 9230360,
+          "CERT": 26312,
+          "STALP": "CA",
+          "ESTYMD": "07/30/1985",
+          "TRUST": "10",
+          "NAME": "First American Trust, FSB",
+          "ID": "26312"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "",
+          "REGAGNT": "FDIC",
+          "CITY": "Conshohocken",
+          "WEBADDR": "www.firstrust.com",
+          "ASSET": 5622445,
+          "CERT": 26647,
+          "STALP": "PA",
+          "ESTYMD": "01/01/1934",
+          "TRUST": "20",
+          "NAME": "Firstrust Savings Bank",
+          "ID": "26647"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WILSON BANK HOLDING CO",
+          "REGAGNT": "FDIC",
+          "CITY": "Lebanon",
+          "WEBADDR": "www.wilsonbank.com",
+          "ASSET": 5978782,
+          "CERT": 26962,
+          "STALP": "TN",
+          "ESTYMD": "05/11/1987",
+          "TRUST": "30",
+          "NAME": "Wilson Bank and Trust",
+          "ID": "26962"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "COMMUNITY BCORP INC",
+          "REGAGNT": "OCC",
+          "CITY": "Chanute",
+          "WEBADDR": "www.mybankcnb.com",
+          "ASSET": 2532014,
+          "CERT": 27046,
+          "STALP": "KS",
+          "ESTYMD": "09/04/1987",
+          "TRUST": "10",
+          "NAME": "Community National Bank & Trust",
+          "ID": "27046"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Saint Charles",
+          "WEBADDR": "www.bankstcharles.com",
+          "ASSET": 3686173,
+          "CERT": 27052,
+          "STALP": "IL",
+          "ESTYMD": "09/21/1987",
+          "TRUST": "10",
+          "NAME": "St. Charles Bank & Trust Company, National Association",
+          "ID": "27052"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SUMITOMO MITSUI TR GROUP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Hoboken",
+          "WEBADDR": "",
+          "ASSET": 3918801,
+          "CERT": 27054,
+          "STALP": "NJ",
+          "ESTYMD": "09/21/1987",
+          "TRUST": "10",
+          "NAME": "Sumitomo Mitsui Trust Bank (U.S.A.) Limited",
+          "ID": "27054"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "COMMUNITY TRUST BCORP INC",
+          "REGAGNT": "FED",
+          "CITY": "Pikeville",
+          "WEBADDR": "www.ctbi.com",
+          "ASSET": 6947398,
+          "CERT": 2720,
+          "STALP": "KY",
+          "ESTYMD": "11/17/1903",
+          "TRUST": "10",
+          "NAME": "Community Trust Bank, Inc.",
+          "ID": "2720"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "ENTERPRISE FINL SERVICES CORP",
+          "REGAGNT": "FED",
+          "CITY": "Clayton",
+          "WEBADDR": "http://www.enterprisebank.com",
+          "ASSET": 17357139,
+          "CERT": 27237,
+          "STALP": "MO",
+          "ESTYMD": "05/09/1988",
+          "TRUST": "20",
+          "NAME": "Enterprise Bank & Trust",
+          "ID": "27237"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Lake Forest",
+          "WEBADDR": "www.lakeforestbank.com",
+          "ASSET": 9250823,
+          "CERT": 27589,
+          "STALP": "IL",
+          "ESTYMD": "05/21/1986",
+          "TRUST": "10",
+          "NAME": "Lake Forest Bank & Trust Company, National Association",
+          "ID": "27589"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "HOMETRUST BANCSHARES INC",
+          "REGAGNT": "FED",
+          "CITY": "Asheville",
+          "WEBADDR": "www.htb.com",
+          "ASSET": 4437045,
+          "CERT": 27677,
+          "STALP": "NC",
+          "ESTYMD": "01/01/1926",
+          "TRUST": "00",
+          "NAME": "HomeTrust Bank",
+          "ID": "27677"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "STURGIS BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Sturgis",
+          "WEBADDR": "www.sturgis.bank",
+          "ASSET": 1028907,
+          "CERT": 28593,
+          "STALP": "MI",
+          "ESTYMD": "01/01/1905",
+          "TRUST": "10",
+          "NAME": "Sturgis Bank & Trust Company",
+          "ID": "28593"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "TRUSTCO BANK CORP NY",
+          "REGAGNT": "OCC",
+          "CITY": "Glenville",
+          "WEBADDR": "www.trustcobank.com",
+          "ASSET": 6523938,
+          "CERT": 31945,
+          "STALP": "NY",
+          "ESTYMD": "01/01/1925",
+          "TRUST": "00",
+          "NAME": "TrustCo Bank",
+          "ID": "31945"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "",
+          "REGAGNT": "FDIC",
+          "CITY": "New Orleans",
+          "WEBADDR": "www.gulfbank.com",
+          "ASSET": 3856151,
+          "CERT": 32974,
+          "STALP": "LA",
+          "ESTYMD": "06/08/1990",
+          "TRUST": "10",
+          "NAME": "Gulf Coast Bank and Trust Company",
+          "ID": "32974"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Wheaton",
+          "WEBADDR": "www.wheatonbank.com",
+          "ASSET": 4790736,
+          "CERT": 33803,
+          "STALP": "IL",
+          "ESTYMD": "05/17/1993",
+          "TRUST": "00",
+          "NAME": "Wheaton Bank & Trust, National Association",
+          "ID": "33803"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Hinsdale",
+          "WEBADDR": "www.hinsdalebank.com",
+          "ASSET": 6800738,
+          "CERT": 33849,
+          "STALP": "IL",
+          "ESTYMD": "10/28/1993",
+          "TRUST": "00",
+          "NAME": "Hinsdale Bank & Trust Company, National Association",
+          "ID": "33849"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "QCR HOLDINGS INC",
+          "REGAGNT": "FED",
+          "CITY": "Bettendorf",
+          "WEBADDR": "www.qcbt.com",
+          "ASSET": 2774878,
+          "CERT": 33867,
+          "STALP": "IA",
+          "ESTYMD": "01/07/1994",
+          "TRUST": "10",
+          "NAME": "Quad City Bank and Trust Company",
+          "ID": "33867"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Chicago",
+          "WEBADDR": "www.wintrustbank.com",
+          "ASSET": 9567734,
+          "CERT": 33935,
+          "STALP": "IL",
+          "ESTYMD": "09/14/1994",
+          "TRUST": "00",
+          "NAME": "Wintrust Bank, National Association",
+          "ID": "33935"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "O-BANK CO LTD",
+          "REGAGNT": "FDIC",
+          "CITY": "City Of Industry",
+          "WEBADDR": "www.evertrustbank.com",
+          "ASSET": 1125370,
+          "CERT": 34010,
+          "STALP": "CA",
+          "ESTYMD": "05/03/1995",
+          "TRUST": "00",
+          "NAME": "EverTrust Bank",
+          "ID": "34010"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Arlington Heights",
+          "WEBADDR": "www.bankatvillage.com",
+          "ASSET": 3625764,
+          "CERT": 34011,
+          "STALP": "IL",
+          "ESTYMD": "05/08/1995",
+          "TRUST": "00",
+          "NAME": "Village Bank and Trust, National Association",
+          "ID": "34011"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Libertyville",
+          "WEBADDR": "www.libertyvillebank.com",
+          "ASSET": 3338776,
+          "CERT": 34073,
+          "STALP": "IL",
+          "ESTYMD": "10/10/1995",
+          "TRUST": "00",
+          "NAME": "Libertyville Bank & Trust Company, National Association",
+          "ID": "34073"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Barrington",
+          "WEBADDR": "www.barringtonbank.com",
+          "ASSET": 5165793,
+          "CERT": 34395,
+          "STALP": "IL",
+          "ESTYMD": "12/19/1996",
+          "TRUST": "00",
+          "NAME": "Barrington Bank & Trust Company, National Association",
+          "ID": "34395"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Crystal Lake",
+          "WEBADDR": "crystallakebank.com",
+          "ASSET": 2259402,
+          "CERT": 34681,
+          "STALP": "IL",
+          "ESTYMD": "12/19/1997",
+          "TRUST": "00",
+          "NAME": "Crystal Lake Bank and Trust Company, National Association",
+          "ID": "34681"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "AMERICAN CMTY FINANCIAL INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Woodstock",
+          "WEBADDR": "http://www.amcombank.com",
+          "ASSET": 1177625,
+          "CERT": 35412,
+          "STALP": "IL",
+          "ESTYMD": "03/13/2000",
+          "TRUST": "00",
+          "NAME": "American Community Bank & Trust",
+          "ID": "35412"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST MID BANCSHARES INC",
+          "REGAGNT": "OCC",
+          "CITY": "Mattoon",
+          "WEBADDR": "www.firstmid.com",
+          "ASSET": 9142999,
+          "CERT": 3705,
+          "STALP": "IL",
+          "ESTYMD": "02/08/1865",
+          "TRUST": "10",
+          "NAME": "First Mid Bank & Trust, National Association",
+          "ID": "3705"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST OTTAWA BANCSHARES INC",
+          "REGAGNT": "OCC",
+          "CITY": "Ottawa",
+          "WEBADDR": "www.acbandt.com",
+          "ASSET": 2069383,
+          "CERT": 3719,
+          "STALP": "IL",
+          "ESTYMD": "06/01/1865",
+          "TRUST": "10",
+          "NAME": "American Commercial Bank & Trust, National Association",
+          "ID": "3719"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FISHBACK FINANCIAL CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Brookings",
+          "WEBADDR": "www.bankeasy.com",
+          "ASSET": 4784894,
+          "CERT": 3973,
+          "STALP": "SD",
+          "ESTYMD": "11/02/1925",
+          "TRUST": "10",
+          "NAME": "First Bank & Trust",
+          "ID": "3973"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SPEND LIFE WISELY CO INC",
+          "REGAGNT": "FED",
+          "CITY": "Durant",
+          "WEBADDR": "www.firstunitedbank.com",
+          "ASSET": 16594244,
+          "CERT": 4239,
+          "STALP": "OK",
+          "ESTYMD": "01/01/1900",
+          "TRUST": "10",
+          "NAME": "First United Bank and Trust Company",
+          "ID": "4239"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "INTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Wichita",
+          "WEBADDR": "http://www.intrustbank.com",
+          "ASSET": 6761946,
+          "CERT": 4799,
+          "STALP": "KS",
+          "ESTYMD": "11/01/1876",
+          "TRUST": "10",
+          "NAME": "Intrust Bank, National Association",
+          "ID": "4799"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST UNITED CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Oakland",
+          "WEBADDR": "https://www.mybank.com",
+          "ASSET": 2054956,
+          "CERT": 4857,
+          "STALP": "MD",
+          "ESTYMD": "01/01/1900",
+          "TRUST": "10",
+          "NAME": "First United Bank & Trust",
+          "ID": "4857"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "TRUSTMARK CORP",
+          "REGAGNT": "FED",
+          "CITY": "Jackson",
+          "WEBADDR": "www.trustmark.com",
+          "ASSET": 19190322,
+          "CERT": 4988,
+          "STALP": "MS",
+          "ESTYMD": "12/19/1889",
+          "TRUST": "10",
+          "NAME": "Trustmark Bank",
+          "ID": "4988"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SOUTHERN MICHIGAN BCORP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Coldwater",
+          "WEBADDR": "www.smb-t.com",
+          "ASSET": 1681505,
+          "CERT": 5019,
+          "STALP": "MI",
+          "ESTYMD": "01/16/1872",
+          "TRUST": "10",
+          "NAME": "Southern Michigan Bank & Trust",
+          "ID": "5019"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "TRUST NO 3 UNDER WILL CHARLES HENDERSON",
+          "REGAGNT": "FDIC",
+          "CITY": "Troy",
+          "WEBADDR": "http://www.troybankandtrust.com",
+          "ASSET": 1600939,
+          "CERT": 5598,
+          "STALP": "AL",
+          "ESTYMD": "01/01/1906",
+          "TRUST": "10",
+          "NAME": "Troy Bank & Trust Company",
+          "ID": "5598"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CITIZENS BANKING CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Frostproof",
+          "WEBADDR": "http://www.citizens-bank.com",
+          "ASSET": 1480129,
+          "CERT": 5673,
+          "STALP": "FL",
+          "ESTYMD": "05/13/1920",
+          "TRUST": "10",
+          "NAME": "Citizens Bank and Trust",
+          "ID": "5673"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CORNERSTONE BCORP INC",
+          "REGAGNT": "OCC",
+          "CITY": "Palatine",
+          "WEBADDR": "www.cnbtc.bank",
+          "ASSET": 1007582,
+          "CERT": 57061,
+          "STALP": "IL",
+          "ESTYMD": "10/16/2000",
+          "TRUST": "10",
+          "NAME": "Cornerstone National Bank & Trust Company",
+          "ID": "57061"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Northbrook",
+          "WEBADDR": "www.northbrookbank.com",
+          "ASSET": 6366430,
+          "CERT": 57082,
+          "STALP": "IL",
+          "ESTYMD": "11/22/2000",
+          "TRUST": "00",
+          "NAME": "Northbrook Bank and Trust Company, National Association",
+          "ID": "57082"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Schaumburg",
+          "WEBADDR": "www.bankschaumburg.com",
+          "ASSET": 2559637,
+          "CERT": 57103,
+          "STALP": "IL",
+          "ESTYMD": "01/22/2001",
+          "TRUST": "00",
+          "NAME": "Schaumburg Bank & Trust Company, National Association",
+          "ID": "57103"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "QCR HOLDINGS INC",
+          "REGAGNT": "FED",
+          "CITY": "Cedar Rapids",
+          "WEBADDR": "www.CRBT.bank",
+          "ASSET": 2900018,
+          "CERT": 57244,
+          "STALP": "IA",
+          "ESTYMD": "09/14/2001",
+          "TRUST": "00",
+          "NAME": "Cedar Rapids Bank and Trust Company",
+          "ID": "57244"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "STIFEL FINANCIAL CORP",
+          "REGAGNT": "FED",
+          "CITY": "Saint Louis",
+          "WEBADDR": "www.stifelbank.com",
+          "ASSET": 19620017,
+          "CERT": 57311,
+          "STALP": "MO",
+          "ESTYMD": "04/16/2002",
+          "TRUST": "00",
+          "NAME": "Stifel Bank and Trust",
+          "ID": "57311"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CITIZENS B&T HOLDINGS INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Guntersville",
+          "WEBADDR": "http://www.citizensbanktrust.com",
+          "ASSET": 1201077,
+          "CERT": 57483,
+          "STALP": "AL",
+          "ESTYMD": "03/03/2003",
+          "TRUST": "00",
+          "NAME": "Citizens Bank & Trust",
+          "ID": "57483"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FIRST WESTERN FINANCIAL INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Denver",
+          "WEBADDR": "www.myfw.com",
+          "ASSET": 3236756,
+          "CERT": 57607,
+          "STALP": "CO",
+          "ESTYMD": "03/17/2004",
+          "TRUST": "10",
+          "NAME": "First Western Trust Bank",
+          "ID": "57607"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "WINTRUST FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Chicago",
+          "WEBADDR": "www.thebeverlybank.com",
+          "ASSET": 2692444,
+          "CERT": 57701,
+          "STALP": "IL",
+          "ESTYMD": "04/01/2004",
+          "TRUST": "00",
+          "NAME": "Beverly Bank & Trust Company, National Association",
+          "ID": "57701"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "PROVIDENCE FINANCIAL CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "South Holland",
+          "WEBADDR": "www.providence.bank",
+          "ASSET": 1558709,
+          "CERT": 57754,
+          "STALP": "IL",
+          "ESTYMD": "09/20/2004",
+          "TRUST": "10",
+          "NAME": "Providence Bank & Trust",
+          "ID": "57754"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "TRUXTON CORP",
+          "REGAGNT": "FED",
+          "CITY": "Nashville",
+          "WEBADDR": "www.truxtontrust.com",
+          "ASSET": 1365858,
+          "CERT": 57825,
+          "STALP": "TN",
+          "ESTYMD": "08/30/2004",
+          "TRUST": "10",
+          "NAME": "Truxton Trust Company",
+          "ID": "57825"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BELMONT FINANCIAL GROUP INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Chicago",
+          "WEBADDR": "WWW.BELMONTBANK.COM",
+          "ASSET": 1050480,
+          "CERT": 58165,
+          "STALP": "IL",
+          "ESTYMD": "06/14/2006",
+          "TRUST": "00",
+          "NAME": "Belmont Bank & Trust Company",
+          "ID": "58165"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "RIVER FINANCIAL CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Prattville",
+          "WEBADDR": "http://www.riverbankandtrust.com",
+          "ASSET": 4017745,
+          "CERT": 58255,
+          "STALP": "AL",
+          "ESTYMD": "04/03/2006",
+          "TRUST": "00",
+          "NAME": "River Bank & Trust",
+          "ID": "58255"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CARTER BANKSHARES INC",
+          "REGAGNT": "FED",
+          "CITY": "Martinsville",
+          "WEBADDR": "www.carterbank.com",
+          "ASSET": 4797064,
+          "CERT": 58596,
+          "STALP": "VA",
+          "ESTYMD": "12/30/2006",
+          "TRUST": "00",
+          "NAME": "Carter Bank & Trust",
+          "ID": "58596"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "PARKSIDE FINANCIAL INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Clayton",
+          "WEBADDR": "www.pfbt.com",
+          "ASSET": 1080613,
+          "CERT": 58796,
+          "STALP": "MO",
+          "ESTYMD": "04/23/2008",
+          "TRUST": "20",
+          "NAME": "Parkside Financial Bank & Trust",
+          "ID": "58796"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "M&T BANK CORP",
+          "REGAGNT": "FED",
+          "CITY": "Buffalo",
+          "WEBADDR": "www.mtb.com",
+          "ASSET": 218788000,
+          "CERT": 588,
+          "STALP": "NY",
+          "ESTYMD": "01/01/1856",
+          "TRUST": "10",
+          "NAME": "Manufacturers and Traders Trust Company",
+          "ID": "588"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CHARLES SCHWAB CORP THE",
+          "REGAGNT": "FED",
+          "CITY": "Westlake",
+          "WEBADDR": "",
+          "ASSET": 10508989,
+          "CERT": 59108,
+          "STALP": "TX",
+          "ESTYMD": "07/02/2018",
+          "TRUST": "10",
+          "NAME": "Charles Schwab Trust Bank",
+          "ID": "59108"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "TRUSTAR BANKSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Great Falls",
+          "WEBADDR": "www.trustarbank.com",
+          "ASSET": 1143324,
+          "CERT": 59183,
+          "STALP": "VA",
+          "ESTYMD": "07/08/2019",
+          "TRUST": "00",
+          "NAME": "Trustar Bank",
+          "ID": "59183"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CHEMUNG FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Elmira",
+          "WEBADDR": "WWW.CHEMUNGCANAL.COM",
+          "ASSET": 2818102,
+          "CERT": 597,
+          "STALP": "NY",
+          "ESTYMD": "10/22/1833",
+          "TRUST": "10",
+          "NAME": "Chemung Canal Trust Company, National Association",
+          "ID": "597"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "HOPKINS FINANCIAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Mitchell",
+          "WEBADDR": "www.cortrustbank.com",
+          "ASSET": 1564404,
+          "CERT": 6063,
+          "STALP": "SD",
+          "ESTYMD": "10/31/1930",
+          "TRUST": "10",
+          "NAME": "CorTrust Bank National Association",
+          "ID": "6063"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "TOMPKINS FINANCIAL CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Ithaca",
+          "WEBADDR": "www.tompkinsbank.com",
+          "ASSET": 8790772,
+          "CERT": 609,
+          "STALP": "NY",
+          "ESTYMD": "01/01/1934",
+          "TRUST": "10",
+          "NAME": "Tompkins Bank & Trust",
+          "ID": "609"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "DEUTSCHE BK AKTIENGESELLSCHAFT",
+          "REGAGNT": "FED",
+          "CITY": "New York",
+          "WEBADDR": "http://www.db.com",
+          "ASSET": 40535000,
+          "CERT": 623,
+          "STALP": "NY",
+          "ESTYMD": "03/30/1903",
+          "TRUST": "10",
+          "NAME": "Deutsche Bank Trust Company Americas",
+          "ID": "623"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "ADIRONDACK TR EMPLOYEE STK OWNERSHIP TR",
+          "REGAGNT": "FED",
+          "CITY": "Saratoga Springs",
+          "WEBADDR": "adirondacktrust.com",
+          "ASSET": 1701861,
+          "CERT": 660,
+          "STALP": "NY",
+          "ESTYMD": "01/01/1901",
+          "TRUST": "10",
+          "NAME": "The Adirondack Trust Company",
+          "ID": "660"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CANANDAIGUA NATIONAL CORP",
+          "REGAGNT": "OCC",
+          "CITY": "Canandaigua",
+          "WEBADDR": "www.cnbank.com",
+          "ASSET": 5405882,
+          "CERT": 6985,
+          "STALP": "NY",
+          "ESTYMD": "12/01/1887",
+          "TRUST": "10",
+          "NAME": "The Canandaigua National Bank and Trust Company",
+          "ID": "6985"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "PEOPLES FINL SERVICES CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Dunmore",
+          "WEBADDR": "www.psbt.com",
+          "ASSET": 5432891,
+          "CERT": 7514,
+          "STALP": "PA",
+          "ESTYMD": "01/01/1905",
+          "TRUST": "10",
+          "NAME": "Peoples Security Bank and Trust Company",
+          "ID": "7514"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FNB BCORP INC",
+          "REGAGNT": "OCC",
+          "CITY": "Newtown",
+          "WEBADDR": "WWW.FNBN.COM",
+          "ASSET": 1166108,
+          "CERT": 7658,
+          "STALP": "PA",
+          "ESTYMD": "02/25/1864",
+          "TRUST": "10",
+          "NAME": "First National Bank and Trust Company of Newtown",
+          "ID": "7658"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "UNIVEST FINANCIAL CORP",
+          "REGAGNT": "FED",
+          "CITY": "Souderton",
+          "WEBADDR": "http://www.univest.net",
+          "ASSET": 8168987,
+          "CERT": 7759,
+          "STALP": "PA",
+          "ESTYMD": "04/01/1876",
+          "TRUST": "10",
+          "NAME": "Univest  Bank and Trust Co.",
+          "ID": "7759"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "COCONUT GROVE BANKSHARES INC",
+          "REGAGNT": "FED",
+          "CITY": "Miami",
+          "WEBADDR": "www.grovebankandtrust.com",
+          "ASSET": 1414037,
+          "CERT": 8018,
+          "STALP": "FL",
+          "ESTYMD": "07/12/1926",
+          "TRUST": "10",
+          "NAME": "Grove Bank & Trust",
+          "ID": "8018"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "CREWS BANKING CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Wauchula",
+          "WEBADDR": "www.crews.bank",
+          "ASSET": 2333967,
+          "CERT": 8021,
+          "STALP": "FL",
+          "ESTYMD": "04/01/1929",
+          "TRUST": "10",
+          "NAME": "Crews Bank & Trust",
+          "ID": "8021"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SABINE BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Many",
+          "WEBADDR": "www.sabinebank.com",
+          "ASSET": 1349578,
+          "CERT": 8141,
+          "STALP": "LA",
+          "ESTYMD": "01/01/1902",
+          "TRUST": "10",
+          "NAME": "Sabine State Bank and Trust Company",
+          "ID": "8141"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "ONE AMERICAN CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Vacherie",
+          "WEBADDR": "www.fabt.com",
+          "ASSET": 1381519,
+          "CERT": 8149,
+          "STALP": "LA",
+          "ESTYMD": "12/03/1910",
+          "TRUST": "00",
+          "NAME": "First American Bank and Trust",
+          "ID": "8149"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "PLANTERS HOLDING CO",
+          "REGAGNT": "FDIC",
+          "CITY": "Indianola",
+          "WEBADDR": "www.planters-bank.com",
+          "ASSET": 2711794,
+          "CERT": 8235,
+          "STALP": "MS",
+          "ESTYMD": "04/10/1920",
+          "TRUST": "10",
+          "NAME": "Planters Bank & Trust Company",
+          "ID": "8235"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "FRANKLIN FINL SERVICES CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Chambersburg",
+          "WEBADDR": "fmtrust.bank",
+          "ASSET": 2336081,
+          "CERT": 8405,
+          "STALP": "PA",
+          "ESTYMD": "01/10/1906",
+          "TRUST": "10",
+          "NAME": "Farmers and Merchants Trust Company of Chambersburg",
+          "ID": "8405"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "COMMERCIAL HOLDING CO",
+          "REGAGNT": "FDIC",
+          "CITY": "Paris",
+          "WEBADDR": "cbtcnet.com",
+          "ASSET": 1079676,
+          "CERT": 8660,
+          "STALP": "TN",
+          "ESTYMD": "05/15/1877",
+          "TRUST": "10",
+          "NAME": "Commercial Bank & Trust Co.",
+          "ID": "8660"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "NORTHERN TRUST CORP",
+          "REGAGNT": "FED",
+          "CITY": "Chicago",
+          "WEBADDR": "www.northerntrust.com",
+          "ASSET": 178566494,
+          "CERT": 913,
+          "STALP": "IL",
+          "ESTYMD": "01/01/1889",
+          "TRUST": "10",
+          "NAME": "The Northern Trust Company",
+          "ID": "913"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "SECURITY BANCSHARES INC",
+          "REGAGNT": "FDIC",
+          "CITY": "Paris",
+          "WEBADDR": "www.securitybanktn.com",
+          "ASSET": 1698276,
+          "CERT": 9172,
+          "STALP": "TN",
+          "ESTYMD": "01/01/1905",
+          "TRUST": "30",
+          "NAME": "Security Bank and Trust Company",
+          "ID": "9172"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "",
+          "REGAGNT": "FED",
+          "CITY": "Cincinnati",
+          "WEBADDR": "www.nsbt.net",
+          "ASSET": 1172039,
+          "CERT": 9457,
+          "STALP": "OH",
+          "ESTYMD": "01/01/1892",
+          "TRUST": "10",
+          "NAME": "The North Side Bank and Trust Company",
+          "ID": "9457"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "BTC FINANCIAL CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Des Moines",
+          "WEBADDR": "www.bankerstrust.com",
+          "ASSET": 7832471,
+          "CERT": 953,
+          "STALP": "IA",
+          "ESTYMD": "06/01/1917",
+          "TRUST": "10",
+          "NAME": "Bankers Trust Company",
+          "ID": "953"
+        },
+        "score": 0
+      },
+      {
+        "data": {
+          "NAMEHCR": "INDEPENDENT BANK CORP",
+          "REGAGNT": "FDIC",
+          "CITY": "Rockland",
+          "WEBADDR": "http://www.rocklandtrust.com",
+          "ASSET": 24968842,
+          "CERT": 9712,
+          "STALP": "MA",
+          "ESTYMD": "09/10/1907",
+          "TRUST": "40",
+          "NAME": "Rockland Trust Company",
+          "ID": "9712"
+        },
+        "score": 0
+      }
+    ],
+    "totals": {
+      "count": 133
+    }
+  }
+}

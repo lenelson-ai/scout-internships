@@ -1,0 +1,10 @@
+[
+  {
+    "employer": "Bessemer Trust",
+    "purpose": "Existence and cohort-method sanity check only; no import, score or must-cover override is permitted for this check"
+  },
+  {
+    "employer": "Brown Brothers Harriman",
+    "purpose": "Example-only cohort observation, not a priority override"
+  }
+]

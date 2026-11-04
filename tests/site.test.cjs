@@ -1,0 +1,10 @@
+const {test}=require('node:test'),assert=require('node:assert/strict');const {matches,day}=require('../site/logic.js');
+const j={title:'Summer 2027 Investment Banking Intern',company:'Example',location:['New York, NY'],category:'FINANCE',season:'Summer 2027',first_seen_at:'2026-11-03T15:00:00Z',posted_at:null,discovery_kind:'INITIAL_DISCOVERY'};const now=new Date('2026-11-03T20:00:00Z');const p={initial:true,basis:'discovered'};
+test('Today uses NY day across UTC midnight',()=>assert.equal(day('2026-11-04T01:00:00Z'),day(now)));
+test('initial onboarding can be excluded',()=>assert.equal(matches(j,{...p,initial:false},'today',now),false));
+test('combined company location function season filters',()=>assert.equal(matches(j,{...p,search:'example',location:'new york',function:'Banking',season:'Summer 2027'},'today',now),true));
+test('different location excludes',()=>assert.equal(matches(j,{...p,location:'Boston'},'today',now),false));
+test('unknown posting date excluded only on posted basis',()=>{assert.equal(matches(j,{...p,basis:'posted'},'week',now),false);assert.equal(matches(j,p,'week',now),true)});
+test('saved remains viewable after seven days',()=>assert.equal(matches(j,p,'saved',new Date('2027-01-01')),true));
+test('discovery older than window excluded',()=>assert.equal(matches(j,p,'week',new Date('2027-01-01')),false));
+test('inclusive default retains uncertain function',()=>assert.equal(matches({...j,category:'OTHER'},p,'today',now),true));

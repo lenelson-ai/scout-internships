@@ -1,0 +1,17 @@
+{
+  "R100": {"jobPostingInfo": {
+    "id": "native100", "title": "Corporate Finance Intern", "jobReqId": "R100",
+    "jobPostingId": "Corporate-Finance-Intern_R100", "jobDescription": "<p>Undergraduate students work on budgeting and financial planning and analysis.</p>",
+    "location": "Boston, MA", "additionalLocations": ["New York, NY"],
+    "country": {"descriptor": "United States of America"}, "timeType": "Full time",
+    "postedOn": "Posted 3 Days Ago", "startDate": "2026-10-01", "canApply": true, "posted": true,
+    "externalUrl": "https://example.wd5.myworkdayjobs.com/External/job/Boston/Corporate-Finance-Intern_R100"
+  }},
+  "R200": {"jobPostingInfo": {
+    "title": "Commercial Banking Summer Analyst", "jobReqId": "R200",
+    "jobDescription": "<p>Undergraduate summer program in commercial banking.</p>",
+    "location": "New York, NY", "country": {"descriptor": "United States of America"},
+    "timeType": "Temporary", "postedOn": "Posted Today", "canApply": true,
+    "externalUrl": "https://example.wd5.myworkdayjobs.com/en-US/External/job/NY/Commercial-Banking-Summer-Analyst_R200"
+  }}
+}

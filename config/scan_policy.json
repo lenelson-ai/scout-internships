@@ -1,0 +1,24 @@
+{
+  "max_sources_per_run": 100,
+  "workers": 4,
+  "per_provider_concurrency": 2,
+  "per_source_budget_seconds": 180,
+  "max_run_seconds": 1500,
+  "tier_intervals_seconds": {
+    "1": 43200,
+    "2": 86400,
+    "3": 86400
+  },
+  "notes": "Four bounded six-hourly opportunities, four workers and two per provider. Up to 400 starts/day before 1500-second launch windows. Local baseline: 80 attempts/184 seconds, 32 successes with mean successful attempt 10.8s and p95 33.7s; fast DNS failures must not be mistaken for success throughput. Reserve 20% of nominal starts for retries. Active/recent recruiting remains Tier 1 12h and Tier 2/3 24h; explicit capacity allocations may lengthen inactive Tier 2 to 4 days/Tier 3 to 7 days, never silently. Runtime/provider limits and no hosted evidence prevent a cadence SLA.",
+  "inactive_interval_multiplier": 2,
+  "capacity": {
+    "enabled": true,
+    "runs_per_day": 4,
+    "retry_reserve_fraction": 0.2,
+    "unmeasured_source_seconds": 30,
+    "inactive_max_interval_seconds": {
+      "2": 345600,
+      "3": 604800
+    }
+  }
+}

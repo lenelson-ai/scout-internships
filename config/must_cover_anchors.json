@@ -1,0 +1,69 @@
+[
+  {
+    "name": "JPMorgan Chase",
+    "tier": 1,
+    "reason": "User explicitly requires representation of this major employer; minimum QA anchor, not a complete registry."
+  },
+  {
+    "name": "Goldman Sachs",
+    "tier": 1,
+    "reason": "User explicitly requires representation of this major employer; minimum QA anchor, not a complete registry."
+  },
+  {
+    "name": "Morgan Stanley",
+    "tier": 1,
+    "reason": "User explicitly requires representation of this major employer; minimum QA anchor, not a complete registry."
+  },
+  {
+    "name": "BlackRock",
+    "tier": 1,
+    "reason": "User explicitly requires representation of this major employer; minimum QA anchor, not a complete registry."
+  },
+  {
+    "name": "Fidelity Investments",
+    "tier": 1,
+    "reason": "User explicitly requires Fidelity's recruiting organization; distinguish Fidelity Investments from unrelated Fidelity National entities."
+  },
+  {
+    "name": "Wellington Management",
+    "tier": 1,
+    "reason": "User explicitly requires this established asset-manager recruiting employer as a minimum QA anchor.",
+    "domain": "wellington.com",
+    "evidence_url": "https://www.wellington.com/en/about-us/campus-programs"
+  },
+  {
+    "name": "Bain & Company",
+    "tier": 1,
+    "reason": "User explicitly requires this consulting recruiting employer as a minimum QA anchor."
+  },
+  {
+    "name": "Boston Consulting Group",
+    "tier": 1,
+    "reason": "User explicitly requires this consulting recruiting employer as a minimum QA anchor."
+  },
+  {
+    "name": "McKinsey & Company",
+    "tier": 1,
+    "reason": "User explicitly requires this consulting recruiting employer as a minimum QA anchor."
+  },
+  {
+    "name": "Deloitte",
+    "tier": 1,
+    "reason": "User explicitly requires this advisory recruiting employer as a minimum QA anchor."
+  },
+  {
+    "name": "EY",
+    "tier": 1,
+    "reason": "User explicitly requires this advisory recruiting employer as a minimum QA anchor."
+  },
+  {
+    "name": "PwC",
+    "tier": 1,
+    "reason": "User explicitly requires this advisory recruiting employer as a minimum QA anchor."
+  },
+  {
+    "name": "KPMG",
+    "tier": 1,
+    "reason": "User explicitly requires this advisory recruiting employer as a minimum QA anchor."
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "id": "legacy_baseline",
+    "source_name": "Scout pre-universe employer baseline",
+    "source_type": "LEGACY",
+    "source_category": "MIXED",
+    "independent_family": "legacy",
+    "source_url": null,
+    "status": "LOCAL_SNAPSHOT"
+  },
+  {
+    "id": "legacy_fortune_2026",
+    "source_name": "Preserved 2026 Fortune 500 roster",
+    "source_type": "CORPORATE_RANKING",
+    "source_category": "CORPORATE",
+    "independent_family": "fortune",
+    "source_url": "https://us500.com/fortune-500-companies",
+    "status": "HISTORICAL_IMPORTED_NOT_REVERIFIED"
+  },
+  {
+    "id": "scout_history",
+    "source_name": "Historical Scout internship observations",
+    "source_type": "RECRUITING_HISTORY",
+    "source_category": "MIXED",
+    "independent_family": "scout_history",
+    "source_url": null,
+    "status": "HISTORICAL_NOT_CURRENT_VERIFICATION"
+  },
+  {
+    "id": "fdic_established_banks",
+    "source_name": "FDIC active institutions with assets >= $10B",
+    "source_type": "REGULATORY",
+    "source_category": "BANKING",
+    "independent_family": "fdic",
+    "source_url": "https://api.fdic.gov/banks/docs",
+    "status": "SNAPSHOT_AVAILABLE"
+  },
+  {
+    "id": "fdic_trust_banks",
+    "source_name": "FDIC active trust-named institutions with assets >= $1B",
+    "source_type": "REGULATORY",
+    "source_category": "BANKING_AND_TRUST",
+    "independent_family": "fdic",
+    "source_url": "https://api.fdic.gov/banks/docs",
+    "status": "SNAPSHOT_AVAILABLE",
+    "requirements": "Provider-wide name-pattern screen, not a complete trust-company census. Balance-sheet assets are not client AUM. Includes commercial banks with trust branding; independent OCC/ADV inputs complement this screen."
+  },
+  {
+    "id": "vault_consulting",
+    "source_name": "Vault Consulting 50 North America 2026 public ranking",
+    "source_type": "RELEVANT_RANKING",
+    "source_category": "CONSULTING",
+    "independent_family": "vault",
+    "source_url": "https://legacy.vault.com/best-companies-to-work-for/consulting/vault-consulting-rankings-top-50",
+    "status": "PUBLIC_PAGINATION"
+  },
+  {
+    "id": "vault_banking",
+    "source_name": "Vault Banking 25 2026 public ranking",
+    "source_type": "RELEVANT_RANKING",
+    "source_category": "INVESTMENT_BANKING",
+    "independent_family": "vault",
+    "source_url": "https://legacy.vault.com/best-companies-to-work-for/banking/best-banks-to-work-for-top-25",
+    "status": "PUBLIC_PAGINATION"
+  },
+  {
+    "id": "user_required_anchors",
+    "source_name": "User-specified minimum must-cover examples",
+    "source_type": "USER_OVERRIDE",
+    "source_category": "MIXED",
+    "independent_family": "user",
+    "source_url": null,
+    "status": "EXPLICIT_USER_REQUIREMENT_NOT_COMPLETE_REGISTRY"
+  },
+  {
+    "id": "sec_adv",
+    "source_name": "SEC investment adviser / Form ADV universe",
+    "source_type": "REGULATORY",
+    "source_category": "ASSET_MANAGEMENT",
+    "independent_family": "sec_adv",
+    "source_url": "https://www.sec.gov/data-research/investment-management-data",
+    "status": "PREPARED_NOT_IMPORTED",
+    "requirements": "Normalized CSV/JSON with CRD ID, legal/trade name, domain, AUM USD, and official recruiting evidence. Require >=$1B AUM plus recruiting evidence for new canonical promotion; raw records may remain in review."
+  },
+  {
+    "id": "occ_trust",
+    "source_name": "OCC active national trust-bank roster",
+    "source_type": "REGULATORY",
+    "source_category": "WEALTH_MANAGEMENT",
+    "independent_family": "occ",
+    "source_url": "https://www.occ.gov/topics/charters-and-licensing/financial-institution-lists/trust-by-name.pdf",
+    "status": "PUBLIC_ROSTER",
+    "requirements": "Import the full public roster with charter IDs; uncertain parent/recruiting-brand matches remain reviewable."
+  },
+  {
+    "id": "private_employers",
+    "source_name": "Major private-employer ranking input",
+    "source_type": "CORPORATE_RANKING",
+    "source_category": "CORPORATE",
+    "independent_family": "private_ranking",
+    "source_url": null,
+    "status": "PREPARED_SOURCE_NOT_SELECTED",
+    "requirements": "A publisher URL, dated snapshot, stable IDs/ranks and independently supplied scale/recruiting fields are required. No model-generated employer list."
+  },
+  {
+    "id": "industry_employers",
+    "source_name": "Insurer / fintech / alternatives / asset manager structured input",
+    "source_type": "RELEVANT_RANKING",
+    "source_category": "MIXED",
+    "independent_family": "industry_ranking",
+    "source_url": null,
+    "status": "PREPARED_SOURCE_NOT_SELECTED",
+    "requirements": "Explicit publisher/dataset provenance. Alternatives/adviser imports require meaningful scale and recruiting evidence; do not import every fund."
+  },
+  {
+    "id": "mfa_members",
+    "source_name": "MFA primary fund-manager directory",
+    "source_type": "INDUSTRY_DIRECTORY",
+    "source_url": "https://www.mfaalts.org/about-mfa/membership/member-directory/",
+    "source_category": "ALTERNATIVES",
+    "independent_family": "mfa",
+    "status": "IMPORTED",
+    "metadata": "{\"not_regulatory\": true, \"membership_is_not_recruiting_evidence\": true}"
+  },
+  {
+    "id": "vault_banking_prestige",
+    "source_name": "Vault 2026 Most Prestigious Banking Firms (full 50)",
+    "source_type": "RELEVANT_RANKING",
+    "source_url": "https://legacy.vault.com/best-companies-to-work-for/banking/most-prestigious-banking-companies",
+    "source_category": "INVESTMENT_BANKING",
+    "independent_family": "vault",
+    "status": "IMPORTED",
+    "metadata": "{\"not_regulatory\": false, \"membership_is_not_recruiting_evidence\": true}"
+  },
+  {
+    "id": "verified_public_recruiters",
+    "source_name": "Independent directory joined to verified native undergraduate internship census",
+    "source_type": "RECRUITING_HISTORY",
+    "source_url": "https://github.com/yt6363/summer-2027-internships",
+    "source_category": "MIXED",
+    "independent_family": "verified_recruiting_join",
+    "status": "IMPORTED",
+    "metadata": "{\"admission\": \"Verified matching US undergraduate business internship + complete >=25-job employer board; new raw membership records alone never admitted\", \"scope\": \"bounded development pool, excludes held-out employers\"}"
+  }
+]
