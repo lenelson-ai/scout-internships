@@ -14,7 +14,7 @@ class ProductionTests(unittest.TestCase):
  def crawl(self,jobs):return run_source(self.c,dict(self.c.execute('select * from sources where id=?',(self.sid,)).fetchone()),fetcher=lambda _:Snapshot(jobs))
  def test_events_only_after_complete_inventory_and_distinguish_initial_reappearance(self):
   self.crawl([self.job(1)]);self.crawl([self.job(1),self.job(2)]);self.crawl([self.job(1)]);self.crawl([self.job(1),self.job(2)])
-  kinds=[r[0] for r in self.c.execute('select kind from discovery_events order by id')];self.assertEqual(kinds,['INITIAL_DISCOVERY','NEW_SINCE_PREVIOUS_SUCCESSFUL_INVENTORY','REAPPEARED'])
+  kinds=[r[0] for r in self.c.execute('select kind from discovery_events order by id')];self.assertEqual(kinds,['INITIAL_DISCOVERY','NEW_SINCE_PREVIOUS_SUCCESSFUL_INVENTORY','REAPPEARED']);self.assertEqual(json.loads(self.c.execute('select classification from discovery_events limit 1').fetchone()[0])['observation']['title'],'Finance Intern')
  def test_failed_snapshot_rolls_back_metrics_and_jobs(self):
   self.crawl([self.job(1)]);before=self.c.execute('select count(*) from source_censuses').fetchone()[0]
   r=run_source(self.c,dict(self.c.execute('select * from sources where id=?',(self.sid,)).fetchone()),fetcher=lambda _:Snapshot([self.job(2)],authoritative=False));self.assertEqual(r['status'],'PARSER_ERROR');self.assertEqual(self.c.execute('select count(*) from source_censuses').fetchone()[0],before);self.assertEqual(self.c.execute('select count(*) from jobs where active=1').fetchone()[0],1)
@@ -72,3 +72,15 @@ class ProductionTests(unittest.TestCase):
   self.crawl([self.job(1)]);self.crawl([self.job(1),self.job(2)])
   def fail(_):raise SourceError('BLOCKED','Access denied',403)
   run_source(self.c,dict(self.c.execute('select * from sources where id=?',(self.sid,)).fetchone()),fetcher=fail);rid=begin(self.c)['id'];deliveries(self.c,rid,True);result=json.loads(self.c.execute('select result from discovery_deliveries').fetchone()[0]);self.assertTrue(result['retained_inventory_membership']);self.assertFalse(result['current_membership']);self.assertFalse(result['in_full_inventory'])
+ def test_failure_categories_keep_network_and_identity_separate(self):
+  from scout.operations import failure_category
+  self.assertEqual(failure_category('NETWORK_ERROR','nodename nor servname provided'),'DNS');self.assertEqual(failure_category('PARSER_ERROR','Opaque requisition lacks identity'),'REQUISITION_IDENTITY');self.assertEqual(failure_category('BLOCKED','HTTP Error 429'),'RATE_LIMIT');self.assertEqual(failure_category('PARSER_ERROR','Census count differs'),'INVENTORY_COMPLETENESS')
+ def test_manual_reruns_of_scheduled_events_do_not_fill_natural_trigger_quota(self):
+  from scout.operations import begin,report
+  begin(self.c)
+  with self.c:
+   self.c.execute("update reliability_evaluations set window_start='2026-10-01T00:00:00-04:00',first_hosted_at='2026-10-01T00:00:00+00:00'")
+   for day in range(1,8):
+    for attempt in range(2,6):
+     stamp=f'2026-10-{day:02d}T12:00:00+00:00';self.c.execute("insert into monitoring_runs values(?,'HOSTED','schedule',?,?,'fixture',?,?,'COMPLETED','{}')",(f'{day}-{attempt}',str(day),str(attempt),stamp,stamp))
+  r=report(self.c);self.assertFalse(r['evaluation']['completed']);self.assertTrue(all(x['natural_scheduled_runs']==0 for x in r['evaluation']['completed_days']))
