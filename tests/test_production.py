@@ -67,3 +67,8 @@ class ProductionTests(unittest.TestCase):
   cfg=manifest(self.c);d=connect(':memory:');self.addCleanup(d.close);cid=company(d,'Fixture');sid=source(d,cid,'greenhouse','f','https://boards.greenhouse.io/f')
   with d:set_role(d,sid,'AUTHORITATIVE',dict(official_url='https://fixture.test/careers',reason='Original'));review_scope(d,cid,[sid],dict(official_url='https://fixture.test/careers',scope_reason='Original scope'))
   adopt(d,cfg);self.assertEqual(d.execute('select state from recruiting_scope_reviews').fetchone()[0],'UNRESOLVED')
+ def test_failed_later_crawl_does_not_masquerade_as_current_verification(self):
+  from scout.operations import begin,deliveries
+  self.crawl([self.job(1)]);self.crawl([self.job(1),self.job(2)])
+  def fail(_):raise SourceError('BLOCKED','Access denied',403)
+  run_source(self.c,dict(self.c.execute('select * from sources where id=?',(self.sid,)).fetchone()),fetcher=fail);rid=begin(self.c)['id'];deliveries(self.c,rid,True);result=json.loads(self.c.execute('select result from discovery_deliveries').fetchone()[0]);self.assertTrue(result['retained_inventory_membership']);self.assertFalse(result['current_membership']);self.assertFalse(result['in_full_inventory'])
