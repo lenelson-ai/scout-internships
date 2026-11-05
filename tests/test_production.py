@@ -87,3 +87,14 @@ class ProductionTests(unittest.TestCase):
  def test_job_after_verified_empty_census_is_new_not_initial_onboarding(self):
   self.crawl([]);self.crawl([self.job(1)])
   self.assertEqual(self.c.execute('select kind from discovery_events').fetchone()[0],'NEW_SINCE_PREVIOUS_SUCCESSFUL_INVENTORY');self.assertEqual(self.c.execute('select discovery_kind from source_inventory').fetchone()[0],'NEW_SINCE_PREVIOUS_SUCCESSFUL_INVENTORY')
+ def test_delivery_follows_canonical_merge_without_claiming_known_job_as_new(self):
+  from scout.operations import begin,deliveries
+  from scout.platform_health import discoveries
+  self.crawl([self.job(1)]);self.crawl([self.job(1),self.job(2)])
+  event=self.c.execute("select * from discovery_events where kind='NEW_SINCE_PREVIOUS_SUCCESSFUL_INVENTORY'").fetchone();canonical=self.c.execute("select id from jobs where external_job_id='1'").fetchone()[0]
+  with self.c:
+   self.c.execute("update jobs set first_seen_at=? where id=?",((__import__('datetime').datetime.now(__import__('datetime').timezone.utc)-__import__('datetime').timedelta(days=1)).isoformat(),canonical))
+   self.c.execute('insert into job_merges values(?,?,?,?)',(event['job_id'],canonical,'2026-01-01T00:00:00Z','Fixture alias'))
+   self.c.execute('update source_inventory set job_id=? where job_id=?',(canonical,event['job_id']))
+   self.c.execute('update jobs set active=0 where id=?',(event['job_id'],))
+  rid=begin(self.c)['id'];deliveries(self.c,rid,True);d=json.loads(self.c.execute('select result from discovery_deliveries').fetchone()[0]);self.assertEqual(d['canonical_job_id'],canonical);self.assertTrue(d['known_job_before']);self.assertTrue(d['in_full_inventory']);self.assertTrue(d['in_recent_feed']);r=discoveries(self.c);self.assertEqual(r['genuinely_new_opportunities'],0);self.assertEqual(r['verified_delivered'],1)

@@ -38,21 +38,22 @@ def history(db):
 def deliveries(db,rid,export_ok):
  from .feed import feed,explain
  from .public_site import business_candidate
+ from .platform_health import canonical_job
  full={j['scout_job_id'] for j in feed(db,'inventory',include_other=True)['jobs'] if business_candidate(j)};recent={j['scout_job_id'] for j in feed(db,'7d',include_other=True)['jobs'] if business_candidate(j)}
  counts=Counter()
  # Every new-since event is checked once per observation run, including a prior
  # event whose first export failed; updated/reappeared events remain distinct.
  for e in db.execute("select * from discovery_events where kind='NEW_SINCE_PREVIOUS_SUCCESSFUL_INVENTORY'").fetchall():
-  jid=e['job_id'];d=json.loads(e['classification']);degree=d.get('eligibility',{}).get('status');target=d.get('internship_confidence',0)>=.8 and d.get('geography_status')=='US' and degree not in ('VERIFIED_GRADUATE_ONLY','RESTRICTED')
+  jid=canonical_job(db,e['job_id']);canonical=db.execute('select first_seen_at from jobs where id=?',(jid,)).fetchone() if jid else None;known_before=bool(e['known_job_before'] or canonical and canonical[0]<e['observed_at']);d=json.loads(e['classification']);degree=d.get('eligibility',{}).get('status');target=d.get('internship_confidence',0)>=.8 and d.get('geography_status')=='US' and degree not in ('VERIFIED_GRADUATE_ONLY','RESTRICTED')
   if jid:
    j=db.execute('select title,function category from jobs where id=?',(jid,)).fetchone();target=bool(target and j and business_candidate(j))
   else:target=False
   member=db.execute('select i.present,i.last_seen_at,s.active,s.source_role,s.health_status from source_inventory i join sources s on s.id=i.source_id where i.source_id=? and i.identity=?',(e['source_id'],e['identity'])).fetchone();proof=json.loads(e['publication']);latency=None;latency_reason='UNKNOWN_OR_DATE_ONLY_PUBLICATION'
-  if proof.get('precision')=='TIMESTAMP' and proof.get('timezone_verified') and proof.get('normalized') and not e['known_job_before']:
+  if proof.get('precision')=='TIMESTAMP' and proof.get('timezone_verified') and proof.get('normalized') and not known_before:
    delta=(datetime.fromisoformat(e['observed_at'])-datetime.fromisoformat(proof['normalized'])).total_seconds()
    if delta>=0:latency=delta;latency_reason='VERIFIED_TIMESTAMP_AND_TIMEZONE'
    else:latency_reason='PUBLICATION_AFTER_OBSERVATION_CONFLICT'
-  result=dict(relevant_undergraduate_or_likely=target,eligibility=degree,retained_inventory_membership=bool(member and member[0]),current_membership=bool(member and member[0] and member[2] and member[3]=='AUTHORITATIVE' and member[4].startswith('SUCCESS') and member[1]>=(datetime.now(timezone.utc)-timedelta(hours=24)).isoformat()),last_verified_at=member[1] if member else None,in_full_inventory=jid in full,in_recent_feed=jid in recent,export_valid=export_ok,delivery_reasons=explain(db,jid) if jid else ['NOT_RETAINED_AS_TARGET_INTERNSHIP'],publication=proof,latency_seconds=latency,latency_evidence=latency_reason,known_job_before=bool(e['known_job_before']))
+  result=dict(relevant_undergraduate_or_likely=target,eligibility=degree,retained_inventory_membership=bool(member and member[0]),current_membership=bool(member and member[0] and member[2] and member[3]=='AUTHORITATIVE' and member[4].startswith('SUCCESS') and member[1]>=(datetime.now(timezone.utc)-timedelta(hours=24)).isoformat()),last_verified_at=member[1] if member else None,in_full_inventory=jid in full,in_recent_feed=jid in recent,export_valid=export_ok,delivery_reasons=explain(db,jid) if jid else ['NOT_RETAINED_AS_TARGET_INTERNSHIP'],publication=proof,latency_seconds=latency,latency_evidence=latency_reason,known_job_before=known_before,original_event_job_id=e['job_id'],canonical_job_id=jid)
   with db:db.execute('insert or replace into discovery_deliveries values(?,?,?,?)',(e['id'],rid,now(),json.dumps(result)))
   if target:counts['relevant_events']+=1;counts['full_inventory_delivered']+=jid in full;counts['recent_feed_delivered']+=jid in recent;counts['verified_latency_observations']+=latency is not None
  return dict(counts)
