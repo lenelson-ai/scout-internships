@@ -6,7 +6,7 @@ A free, static internship feed backed by a durable public-job scanner. The front
 
 Use GitHub Pages with this public repository and standard GitHub-hosted runners. In Settings → Pages, choose **GitHub Actions**. Run **Actions → Refresh Scout → Run workflow**. A production verification report must distinguish manual dispatch from naturally scheduled runs.
 
-The workflow has four UTC opportunities, at 05:23, 11:23, 17:23 and 23:23. This is a best-effort schedule; there is no same-day discovery guarantee. Do not increase frequency based on planning estimates alone. Standard public-repository runners are [free under GitHub's documented policy](https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job); [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) and artifact/storage policies still apply.
+The workflow has four UTC opportunities, at 01:17, 07:17, 13:17 and 19:17. This is a best-effort schedule; there is no same-day discovery guarantee. Do not increase frequency based on planning estimates alone. Standard public-repository runners are [free under GitHub's documented policy](https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job); [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) and artifact/storage policies still apply.
 
 ## Durable state
 
