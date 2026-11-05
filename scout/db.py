@@ -11,7 +11,7 @@ def connect(path=DEFAULT_DB):
     db.execute("PRAGMA foreign_keys=ON")
     db.execute("PRAGMA journal_mode=WAL")
     version_exists = db.execute("SELECT name FROM sqlite_master WHERE name='schema_version'").fetchone()
-    if version_exists and db.execute("SELECT MAX(version) FROM schema_version").fetchone()[0] not in (1, 2, 3, 4, 5, 6, 7, 8, 9):
+    if version_exists and db.execute("SELECT MAX(version) FROM schema_version").fetchone()[0] not in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10):
         raise RuntimeError("Unsupported database schema version")
     db.executescript(Path(__file__).with_name("schema.sql").read_text())
     if db.execute("SELECT MAX(version) FROM schema_version").fetchone()[0] < 2:
@@ -30,6 +30,8 @@ def connect(path=DEFAULT_DB):
         db.executescript(Path(__file__).with_name("schema_v8.sql").read_text())
     if db.execute("SELECT MAX(version) FROM schema_version").fetchone()[0] < 9:
         db.executescript(Path(__file__).with_name("schema_v9.sql").read_text())
+    if db.execute("SELECT MAX(version) FROM schema_version").fetchone()[0] < 10:
+        db.executescript(Path(__file__).with_name("schema_v10.sql").read_text())
     return db
 
 

@@ -34,3 +34,9 @@ python3 -m http.server 8001 --bind 127.0.0.1 --directory site
 ```
 
 To operate on a restored production state, always pass `--db shared-state/scout.sqlite3` to scanner/recovery/audit commands. Never initialize a new database over existing state. Back up the state branch before configuration migration. User saves/preferences remain browser-local and never enter scanner state.
+
+## Automatic production health evidence
+
+Each ordinary hosted scan reads the existing workflow's GitHub API history using the short-lived Actions token with `actions: read`. No personal token is stored. Completed platform records include trigger, attempt, restore/scan/checkpoint steps and Pages job result; this captures early failures that have no scanner monitoring row. API failure is recorded as unknown evidence and never fabricated as zero executions. Current workflow final publication is collected by a following run, because the checkpoint precedes Pages publication.
+
+The rolling state branch carries `operations.json` and `production-health.md`, backed by durable platform records and source/discovery metrics inside SQLite. Completed calendar days retain expected versus observed natural first-attempt executions, failures, missing evidence and delivery results. Manual dispatches do not fill unattended quotas. A historical successful delivery remains distinct from a listing's current availability. Next-opportunity times are reported in UTC and America/New_York. The four configured daily opportunities have not changed.

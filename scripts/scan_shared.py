@@ -10,6 +10,10 @@ from scout import operations
 def main():
  p=argparse.ArgumentParser();p.add_argument('--db',default='data/scout.sqlite3');p.add_argument('--limit',type=int);p.add_argument('--max-seconds',type=int);p.add_argument('--output',default='site/data/feed.json');p.add_argument('--metrics-output',default='shared-state/run-metrics.json');a=p.parse_args();db=connect(a.db);context=operations.begin(db);old=operations.history(db);health={r['id']:r['health_status'] for r in db.execute('select id,health_status from sources')};started=time.monotonic();r=dict(operation_id=context['id'],context=context,export_success=False)
  try:
+  import os
+  if os.environ.get('GITHUB_ACTIONS')=='true':
+   from scout.platform_health import collect
+   r['platform_evidence_collection']=collect(db,os.environ['GITHUB_REPOSITORY'])
   from scout.deployment_config import adopt,activate
   cfg=Path('deploy/scanner-config.json')
   if cfg.exists():r['configuration_adoption']=adopt(db,json.loads(cfg.read_text()))
@@ -32,6 +36,8 @@ def main():
   with db:
    db.execute('update monitoring_runs set finished_at=?,status=?,metrics=? where id=?',(now(),status,json.dumps(r),context['id']))
    if r.get('batch_id'):db.execute('update scan_batches set metrics=? where id=?',(json.dumps(r),r['batch_id']))
-  metrics=Path(a.metrics_output);metrics.parent.mkdir(parents=True,exist_ok=True);metrics.write_text(json.dumps(r,indent=2));report=operations.report(db);metrics.with_name('operations.json').write_text(json.dumps(report,indent=2));print(json.dumps(r),flush=True);db.execute('pragma wal_checkpoint(TRUNCATE)');db.close()
+  metrics=Path(a.metrics_output);metrics.parent.mkdir(parents=True,exist_ok=True);metrics.write_text(json.dumps(r,indent=2));report=operations.report(db);r['monitoring_snapshot']={k:report[k] for k in ('generated_at','monitoring_health','queue_backlog','oldest_overdue_seconds','missing_requested_cadence','missing_effective_cadence','backlog_reasons')};r['monitoring_snapshot']['monitoring_health']={k:v for k,v in report['monitoring_health'].items() if k!='sources'}
+  with db:db.execute('update monitoring_runs set metrics=? where id=?',(json.dumps(r),context['id']))
+  metrics.write_text(json.dumps(r,indent=2));metrics.with_name('operations.json').write_text(json.dumps(report,indent=2));metrics.with_name('production-health.md').write_text(__import__('scout.platform_health',fromlist=['human_report']).human_report(report));print(json.dumps(r),flush=True);db.execute('pragma wal_checkpoint(TRUNCATE)');db.close()
  return 0 if status=='COMPLETED' else 2
 if __name__=='__main__':sys.exit(main())

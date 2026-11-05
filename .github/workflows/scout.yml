@@ -14,6 +14,7 @@ jobs:
     timeout-minutes: 45
     permissions:
       contents: write
+      actions: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,6 +32,8 @@ jobs:
           node --test tests/site.test.cjs
       - name: Scan due sources and validate publication
         id: scan
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           python -m scripts.scan_shared --db shared-state/scout.sqlite3
           python -m scripts.validate_public_site
@@ -49,6 +52,7 @@ jobs:
             shared-state/restore.json
             shared-state/run-metrics.json
             shared-state/operations.json
+            shared-state/production-health.md
             shared-state/checkpoint-result.json
       - uses: actions/upload-pages-artifact@v3
         if: success() && steps.scan.outcome == 'success' && steps.checkpoint.outcome == 'success'

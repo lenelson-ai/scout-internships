@@ -15,7 +15,7 @@ def failure_category(status,error):
  if status=='BLOCKED':return 'ACCESS_RESTRICTION'
  if status=='ATS_CHANGED':return 'PUBLICATION_CHANGED_OR_UNAVAILABLE'
  if 'opaque' in e or 'requisition' in e:return 'REQUISITION_IDENTITY'
- if any(x in e for x in ('cap','count','census','pagination','repeated posting','partition')):return 'INVENTORY_COMPLETENESS'
+ if any(x in e for x in ('cap','count','census','pagination','repeated posting','partition','facet safety bound')):return 'INVENTORY_COMPLETENESS'
  if 'detail' in e:return 'DETAIL_HYDRATION'
  if status=='NETWORK_ERROR':return 'NETWORK_TRANSPORT'
  return status
@@ -65,16 +65,27 @@ def report(db):
  runs=[dict(r,metrics=json.loads(r['metrics'])) for r in db.execute('select * from monitoring_runs order by started_at')];attempts=[dict(r,metrics=json.loads(r['metrics'])) for r in db.execute('select a.*,s.ats_type provider from scan_attempts a join sources s on s.id=a.source_id')];errors={(r['metrics'].get('batch_id'),v['source_id']):v.get('error') for r in runs for v in r['metrics'].get('results',[])};known_batches={r['metrics'].get('batch_id') for r in runs};attempts=[r for r in attempts if r['batch_id'] in known_batches]
  def summary(rr):
   values=sorted(r['metrics'].get('total_seconds',0) for r in rr);return dict(attempts=len(rr),complete=sum(r['status'].startswith('SUCCESS') for r in rr),statuses=dict(Counter(r['status'] for r in rr)),failure_categories=dict(Counter(failure_category(r['status'],errors.get((r['batch_id'],r['source_id']))) for r in rr)),distinct_sources=len({r['source_id'] for r in rr}),mean_seconds=statistics.mean(values) if values else None,p95_seconds=values[max(0,math.ceil(.95*len(values))-1)] if values else None,retries=sum(bool(r['metrics'].get('retry_attempt')) for r in rr),retry_seconds=sum(r['metrics'].get('total_seconds',0) for r in rr if r['metrics'].get('retry_attempt')))
- evaluation=dict(db.execute("select * from reliability_evaluations where id='hosted-seven-day-v1'").fetchone());days=[]
- if evaluation['window_start']:
-  first=datetime.fromisoformat(evaluation['window_start']);today=at.astimezone(ZoneInfo(evaluation['timezone'])).date()
-  for n in range(7):
-   day=(first+timedelta(days=n)).date()
-   if day>=today:break
-   rr=[r for r in runs if r['environment']=='HOSTED' and datetime.fromisoformat(r['started_at']).astimezone(ZoneInfo(evaluation['timezone'])).date()==day]
-   days.append(dict(date=str(day),hosted_runs=len(rr),natural_scheduled_runs=len({r['workflow_run_id'] for r in rr if r['trigger']=='schedule' and r['run_attempt']=='1'}),completed=sum(r['status']=='COMPLETED' for r in rr),failed=sum(r['status']=='ERROR' for r in rr),planned_workflow_opportunities=4,evidence_complete=len({r['workflow_run_id'] for r in rr if r['trigger']=='schedule' and r['run_attempt']=='1'})>=4,run_ids=[r['workflow_run_id'] for r in rr]))
- evaluation.update(completed_days=days,completed=len(days)==7 and all(r['evidence_complete'] for r in days),status='INITIALIZED' if not days else 'ACCUMULATING_OR_INCOMPLETE_EVIDENCE')
- if evaluation['completed']:evaluation['status']='COMPLETED_OBSERVATION_WINDOW_NOT_A_RELIABILITY_GUARANTEE'
+ from .platform_health import evaluation as platform_evaluation,discoveries
+ evaluation=dict(db.execute("select * from reliability_evaluations where id='hosted-seven-day-v1'").fetchone())
+ platform=platform_evaluation(db,evaluation['window_start'],at)
+ days=platform['completed_days']
+ for day in days:
+  rr=[r for r in runs if r['environment']=='HOSTED' and datetime.fromisoformat(r['started_at']).astimezone(ZoneInfo(evaluation['timezone'])).date().isoformat()==day['date']]
+  day.update(natural_scheduled_runs=day['observed_natural_workflows'],hosted_runs=len(rr),scanner_complete=sum(r['status']=='COMPLETED' for r in rr),boards_due=sum(r['metrics'].get('claimed',0) for r in rr),boards_attempted=sum(r['metrics'].get('attempted',0) for r in rr),complete_inventories=sum(r['metrics'].get('success',0) for r in rr),failed_inventories=sum(r['metrics'].get('failed',0) for r in rr),run_ids=[r['workflow_run_id'] for r in rr])
+ discovery=discoveries(db)
+ for day in days:
+  target=[r for r in discovery['opportunities'] if datetime.fromisoformat(r['observed_at']).astimezone(ZoneInfo(evaluation['timezone'])).date().isoformat()==day['date']]
+  rr=[r for r in runs if r['workflow_run_id'] in day['run_ids']]
+  day.update(relevant_new_internships=len(target),verified_new_deliveries=sum(r['delivered_verified'] for r in target),latency_seconds=[r['latency_seconds'] for r in target if r['latency_seconds'] is not None],monitoring_snapshots=[r['metrics']['monitoring_snapshot'] for r in rr if r['metrics'].get('monitoring_snapshot')],workflow_duration_seconds=[(datetime.fromisoformat(r['updated_at'].replace('Z','+00:00'))-datetime.fromisoformat((r.get('run_started_at') or r['created_at']).replace('Z','+00:00'))).total_seconds() for r in platform['workflow_runs'] if str(r['id']) in {x['workflow_id'] for x in day['workflow_verification']} and r['status']=='completed'])
+ evaluation.update(completed_days=days,completed=platform['completed'],status='COMPLETED_OBSERVATION_WINDOW_NOT_A_RELIABILITY_GUARANTEE' if platform['completed'] else 'INITIALIZED' if not days else 'ACCUMULATING_OR_INCOMPLETE_EVIDENCE')
+ backlog_rows=[]
+ for q in due:
+  source=db.execute('select health_status,last_error from sources where id=?',(q['source_id'],)).fetchone()
+  reason='SOURCE_FAILURE_RETRY' if q['attempts'] else 'AWAITING_SCHEDULER_OPPORTUNITY'
+  pause=db.execute('select 1 from provider_pauses p join sources s on s.ats_type=p.provider where s.id=? and p.until_at>?',(q['source_id'],at.isoformat())).fetchone()
+  if pause:reason='PROVIDER_COOLDOWN'
+  if q['lease_until'] and q['lease_until']>at.isoformat():reason='LEASED_OR_IN_PROGRESS'
+  backlog_rows.append(dict(source_id=q['source_id'],reason=reason,overdue_seconds=max(0,(at-datetime.fromisoformat(q['due_at'])).total_seconds()),last_outcome=q['last_outcome'],failure_category=failure_category(source['health_status'],source['last_error'])))
  from .universe_qa import health_report
  health=health_report(db);states=[]
  for sid in ids:
@@ -82,4 +93,4 @@ def report(db):
   kind='HEALTHY_COMPLETE' if s['health_status'].startswith('SUCCESS') and fresh and census and census[0]==members else 'STALE' if s['health_status'].startswith('SUCCESS') and not fresh else 'BLOCKED' if s['health_status']=='BLOCKED' else 'PENDING_FIRST_CENSUS' if not last else 'FAILED'
   states.append(dict(source_id=sid,provider=s['ats_type'],state=kind,error=s['last_error'],last_successful_inventory=last))
  monitoring_health=dict(canonical_employers=health['total_canonical_employers'],healthy_certified_employers=sum(r['monitored_successfully'] for r in health['tier_metrics'].values()),tiers=health['tier_metrics'],scheduled_board_states=dict(Counter(r['state'] for r in states)),healthy_workday_boards=sum(r['provider']=='workday' and r['state']=='HEALTHY_COMPLETE' for r in states),awaiting_retry=sum(r['attempts']>0 for r in queue),sources=states)
- return dict(generated_at=now(),monitoring_health=monitoring_health,scheduled_boards=len(ids),queue_backlog=len(due),oldest_overdue_seconds=max([(at-datetime.fromisoformat(r['due_at'])).total_seconds() for r in due]or[0]),missing_requested_cadence=missed('requested_interval_seconds'),missing_effective_cadence=missed('interval_seconds'),provider={p:summary([r for r in attempts if r['provider']==p]) for p in sorted({r['provider'] for r in attempts})},environments={env:dict(runs=len([r for r in runs if r['environment']==env]),attempts=summary([a for a in attempts if a['batch_id'] in {r['metrics'].get('batch_id') for r in runs if r['environment']==env}])) for env in ('LOCAL','HOSTED')},discovery_kinds=dict(Counter(r[0] for r in db.execute('select kind from discovery_events'))),evaluation=evaluation,runs=runs)
+ return dict(generated_at=now(),platform=platform,discovery=discovery,backlog_reasons=dict(Counter(r['reason'] for r in backlog_rows)),overdue_sources=backlog_rows,monitoring_health=monitoring_health,scheduled_boards=len(ids),queue_backlog=len(due),oldest_overdue_seconds=max([(at-datetime.fromisoformat(r['due_at'])).total_seconds() for r in due]or[0]),missing_requested_cadence=missed('requested_interval_seconds'),missing_effective_cadence=missed('interval_seconds'),provider={p:summary([r for r in attempts if r['provider']==p]) for p in sorted({r['provider'] for r in attempts})},environments={env:dict(runs=len([r for r in runs if r['environment']==env]),attempts=summary([a for a in attempts if a['batch_id'] in {r['metrics'].get('batch_id') for r in runs if r['environment']==env}])) for env in ('LOCAL','HOSTED')},discovery_kinds=dict(Counter(r[0] for r in db.execute('select kind from discovery_events'))),evaluation=evaluation,runs=runs)

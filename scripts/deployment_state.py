@@ -66,7 +66,9 @@ def persist(directory):
   git('-C',str(work),'checkout','--orphan','scout-checkpoint-'+uuid.uuid4().hex);git('-C',str(work),'rm','-rf','.')
   shutil.copy2(d/'state.sqlite3.gz',work/'state.sqlite3.gz')
   for name in ('feed','inventory'):shutil.copy2('site/data/'+name+'.json',work/(name+'.json'))
-  (work/'state-manifest.json').write_text(json.dumps(manifest,indent=2));(work/'operations.json').write_text(json.dumps(operations,indent=2));(work/'discovery-events.json').write_text(json.dumps(events,indent=2));git('-C',str(work),'add','state.sqlite3.gz','state-manifest.json','feed.json','inventory.json','operations.json','discovery-events.json');git('-C',str(work),'-c','user.name=Scout scanner','-c','user.email=scout@users.noreply.github.com','commit','-m','Checkpoint verified scanner history')
+  from scout.platform_health import human_report
+  (work/'production-health.md').write_text(human_report(operations))
+  (work/'state-manifest.json').write_text(json.dumps(manifest,indent=2));(work/'operations.json').write_text(json.dumps(operations,indent=2));(work/'discovery-events.json').write_text(json.dumps(events,indent=2));git('-C',str(work),'add','state.sqlite3.gz','state-manifest.json','feed.json','inventory.json','operations.json','discovery-events.json','production-health.md');git('-C',str(work),'-c','user.name=Scout scanner','-c','user.email=scout@users.noreply.github.com','commit','-m','Checkpoint verified scanner history')
   expected=restored['state_commit'] or '';git('-C',str(work),'push','origin','HEAD:refs/heads/scout-state','--force-with-lease=refs/heads/scout-state:'+expected)
  finally:git('worktree','remove','--force',str(work),check=False);shutil.rmtree(work,ignore_errors=True)
  (d/'checkpoint-result.json').write_text(json.dumps(dict(checkpoint_success=True,pushed=True,public_export_success=good,compressed_sha256=manifest['compressed_sha256']),indent=2));print('Validated durable checkpoint persisted; publication eligibility:',good)
