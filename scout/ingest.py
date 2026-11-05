@@ -172,7 +172,7 @@ def apply_snapshot(db, source, snapshot, stamp):
         raise SourceError("PARSER_ERROR", f"Suspicious inventory drop: {previous[0]} -> {len(snapshot.jobs)}; closure withheld")
     seen, matching, events = set(keys), 0, {}
     found_legacy = set()
-    inventory_bootstrap=not previous or not db.execute('SELECT 1 FROM source_inventory WHERE source_id=? LIMIT 1',(source['id'],)).fetchone()
+    inventory_bootstrap=not previous or (previous[0]>0 and not db.execute('SELECT 1 FROM source_inventory WHERE source_id=? LIMIT 1',(source['id'],)).fetchone())
     path_id_history={};proper_id_urls=set()
     if source['ats_type']=='workday':
         for row in db.execute('SELECT * FROM source_inventory WHERE source_id=?',(source['id'],)):

@@ -84,3 +84,6 @@ class ProductionTests(unittest.TestCase):
     for attempt in range(2,6):
      stamp=f'2026-10-{day:02d}T12:00:00+00:00';self.c.execute("insert into monitoring_runs values(?,'HOSTED','schedule',?,?,'fixture',?,?,'COMPLETED','{}')",(f'{day}-{attempt}',str(day),str(attempt),stamp,stamp))
   r=report(self.c);self.assertFalse(r['evaluation']['completed']);self.assertTrue(all(x['natural_scheduled_runs']==0 for x in r['evaluation']['completed_days']))
+ def test_job_after_verified_empty_census_is_new_not_initial_onboarding(self):
+  self.crawl([]);self.crawl([self.job(1)])
+  self.assertEqual(self.c.execute('select kind from discovery_events').fetchone()[0],'NEW_SINCE_PREVIOUS_SUCCESSFUL_INVENTORY');self.assertEqual(self.c.execute('select discovery_kind from source_inventory').fetchone()[0],'NEW_SINCE_PREVIOUS_SUCCESSFUL_INVENTORY')
