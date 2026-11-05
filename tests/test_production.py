@@ -98,3 +98,13 @@ class ProductionTests(unittest.TestCase):
    self.c.execute('update source_inventory set job_id=? where job_id=?',(canonical,event['job_id']))
    self.c.execute('update jobs set active=0 where id=?',(event['job_id'],))
   rid=begin(self.c)['id'];deliveries(self.c,rid,True);d=json.loads(self.c.execute('select result from discovery_deliveries').fetchone()[0]);self.assertEqual(d['canonical_job_id'],canonical);self.assertTrue(d['known_job_before']);self.assertTrue(d['in_full_inventory']);self.assertTrue(d['in_recent_feed']);r=discoveries(self.c);self.assertEqual(r['genuinely_new_opportunities'],0);self.assertEqual(r['verified_delivered'],1)
+ def test_shortened_cadence_pulls_healthy_queue_forward_but_preserves_retry_and_lease(self):
+  from scout.scan_queue import sync
+  from datetime import datetime,timedelta,timezone
+  self.crawl([self.job(1)]);sync(self.c);stamp=datetime.now(timezone.utc);future=(stamp+timedelta(days=4)).isoformat()
+  with self.c:self.c.execute('update sources set interval_seconds=3600 where id=?',(self.sid,));self.c.execute('update scan_queue set due_at=? where source_id=?',(future,self.sid))
+  sync(self.c);last=self.c.execute('select last_successful_check_at from sources where id=?',(self.sid,)).fetchone()[0];self.assertEqual(self.c.execute('select due_at from scan_queue where source_id=?',(self.sid,)).fetchone()[0],(datetime.fromisoformat(last)+timedelta(hours=1)).isoformat())
+  with self.c:self.c.execute('update scan_queue set due_at=?,attempts=2 where source_id=?',(future,self.sid))
+  sync(self.c);self.assertEqual(self.c.execute('select due_at from scan_queue where source_id=?',(self.sid,)).fetchone()[0],future)
+  with self.c:self.c.execute("update scan_queue set attempts=0,lease_token='fixture',lease_until=? where source_id=?",(future,self.sid))
+  sync(self.c);self.assertEqual(self.c.execute('select due_at from scan_queue where source_id=?',(self.sid,)).fetchone()[0],future)

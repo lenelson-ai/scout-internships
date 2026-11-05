@@ -39,6 +39,10 @@ def sync(db,at=None):
    if not s:continue
    due=(datetime.fromisoformat(s['last_successful_check_at'])+timedelta(seconds=s['interval_seconds'])).isoformat() if s['last_successful_check_at'] else stamp
    db.execute('insert or ignore into scan_queue(source_id,due_at) values(?,?)',(sid,due))
+   # A shorter current cadence must not inherit a later old-policy due time.
+   # Preserve retries/cooldowns and live leases; never postpone already due work.
+   if s['health_status'].startswith('SUCCESS') and s['last_successful_check_at']:
+    db.execute('update scan_queue set due_at=min(due_at,?) where source_id=? and attempts=0 and lease_token is null',(due,sid))
    # A complete recovery crawl can satisfy a due scan without recrawling it.
    # Never touch a live lease or infer success from a failed/partial inventory.
    latest_dispatch=db.execute('select max(finished_at) from scan_attempts where source_id=?',(sid,)).fetchone()[0]
